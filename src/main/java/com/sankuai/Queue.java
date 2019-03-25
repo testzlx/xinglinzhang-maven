@@ -1,5 +1,7 @@
 package com.sankuai;
 
+import java.lang.reflect.Array;
+
 public class Queue<T> {
 
     private class  Node<T>{
@@ -44,7 +46,46 @@ public class Queue<T> {
         return head == null;
     }
 
-    public static void main(String[] args) {
+    public static class ArrayQueue<T>{
+        private Integer front = 0,rear = 0;
+        private T[] arrs;
+
+        public ArrayQueue(int size,Class<T> type) throws Exception {
+            //attention 泛型数组不能直接定义
+         arrs = (T[])Array.newInstance(type,size+1);
+
+        }
+
+        public void linkPush(T t){
+            if(!isFull()) {
+                arrs[rear] = t;
+                rear = (++rear) % arrs.length;
+            }
+
+        }
+
+        public T linkTop(){
+            return arrs[front];
+        }
+
+        public T linkPull(){
+            if(!isLinkEmpty()) {
+                T value =  arrs[front];
+                front = (++front) % arrs.length;
+                return value;
+            }
+            return null;
+        }
+
+        public boolean isLinkEmpty() {
+            return rear == front;
+        }
+        public boolean isFull(){
+            return (rear+1)%arrs.length == front;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
         System.out.printf("hello world!");
         Queue<Integer> queue = new Queue<Integer>();
         System.out.println("isLinkEmpty:"+queue.isLinkEmpty());
@@ -55,5 +96,22 @@ public class Queue<T> {
         queue.linkPush(5);
         System.out.println(" pull "+queue.linkPull());
         System.out.println(" pull "+queue.linkPull());
+        System.out.println("----------------------------------------------------------------------");
+        Queue.ArrayQueue<Integer> arrayQueue = new Queue.ArrayQueue<Integer>(5,Integer.class);
+        arrayQueue.linkPush(0);
+        arrayQueue.linkPush(1);
+        arrayQueue.linkPush(2);
+        System.out.println(arrayQueue.linkPull());
+        arrayQueue.linkPush(3);
+        arrayQueue.linkPush(4);
+        arrayQueue.linkPush(5);
+        arrayQueue.linkPush(6);
+        System.out.println(arrayQueue.linkPull());
+        System.out.println(arrayQueue.linkPull());
+        System.out.println(arrayQueue.linkPull());
+        System.out.println(arrayQueue.linkPull());
+        System.out.println(arrayQueue.linkPull());
+
+
     }
 }
