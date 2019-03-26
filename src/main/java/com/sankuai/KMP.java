@@ -35,7 +35,7 @@ public class KMP {
 
     public static void main(String[] args) {
         KMP kmp = new KMP();
-        String t = "aba",s = "abbaba";
+        String t = "aabbd",s = "aabbcaaefaabbdeaacd";
         System.out.println(kmp.kmpSearch(s,t));
     }
 }
