@@ -1,7 +1,12 @@
 package com.sankuai;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
- * 限流分两种，一种漏桶算法，另一种令牌桶算法
+ * 限流分4种，一种漏桶算法，另一种令牌桶算法,一种是固定窗口，一种是滑动窗口
  */
 public class RateLimit {
 
@@ -11,6 +16,12 @@ public class RateLimit {
     private int rate = 100;
 
     private int curentSize = 0;
+
+    private AtomicInteger count ;
+    private int maxPreSecondVisit;
+
+
+
 
     //漏桶算法
     public boolean limit1(){
@@ -36,6 +47,67 @@ public class RateLimit {
         }else{
             return false;
         }
+    }
+
+    //固定窗口
+    public boolean limit3(){
+        long currentTime = System.currentTimeMillis();
+        if(currentTime -now>1000){
+            now = currentTime;
+            count.set(1);
+        }else{
+            count.addAndGet(1);
+        }
+        return count.get() > maxPreSecondVisit ? false : true;
+
+    }
+
+    //滑动窗口
+    public boolean limit4(){
+        long currentTime = System.currentTimeMillis();
+        if(currentTime -now>1000){
+            now = currentTime;
+            count.set(1);
+        }else{
+            count.addAndGet(1);
+        }
+        return count.get() > maxPreSecondVisit ? false : true;
+    }
+
+    //滑动窗口
+    public static  class SlideWindowRateLimiter {
+        private AtomicInteger[] buckets;
+        private int index=0;
+        private int maxVisitPerSecond;
+        private AtomicInteger visit=new AtomicInteger(0);
+
+        public SlideWindowRateLimiter(int bucket,int maxVisitPerSecond ){
+            this.buckets = new AtomicInteger[bucket];
+            for(int i = 0;i<bucket;i++){
+                buckets[i] = new AtomicInteger(0);
+            }
+            this.maxVisitPerSecond = maxVisitPerSecond;
+            startThread();
+        }
+
+        private void startThread() {
+            ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+            scheduledExecutorService.scheduleAtFixedRate(new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    index = (index + 1) % SlideWindowRateLimiter.this.buckets.length;
+                    int val = SlideWindowRateLimiter.this.buckets[index].getAndSet(0);
+                    SlideWindowRateLimiter.this.visit.addAndGet(-val);
+                    }
+            }),100, 100, TimeUnit.MILLISECONDS);
+        }
+
+        public boolean limit(){
+            buckets[index].addAndGet(1);
+            visit.addAndGet(1);
+            return visit.get() > maxVisitPerSecond ? false : true;
+        }
+
     }
 
     public static void main(String[] args) {
