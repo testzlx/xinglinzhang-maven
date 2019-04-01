@@ -65,6 +65,10 @@ public class Tree {
 		}
 		return root;
 	}
+	//递归创建树，但是没返回结果
+	void createTreeWithOutRet(Node root){
+		//思考了下还是不行，操作操作指针，java是引用传递；
+	}
 
 	/**
 	 * 非递归创建二叉树
@@ -137,10 +141,10 @@ public class Tree {
 	/*****************************************************************************/
 	/**
 	 * 
-	 * 非递归遍历
+	 *  中序 非递归遍历
 	 */
 
-	void preOrder1(Node root) {
+	void midOrder1(Node root) {
 		int index = -1;
 		Node[] arr = new Node[10];
 		Node node = root;
@@ -157,9 +161,9 @@ public class Tree {
 
 	/**
 	 * 
-	 * @param 中序遍历
+	 * @param 先序遍历
 	 */
-	void midOrder1(Node root) {
+	void  preOrder1 (Node root) {
 		int index = -1;
 		Node[] arr = new Node[10];
 		Node node = root;
@@ -191,7 +195,7 @@ public class Tree {
 		while (index != -1) {
 			node = arr[index];
 			if (node.right == null || tags[index] != 0) {
-				tags[index] = 0;
+				//tags[index] = 0; 这部我理解是多余的，时间20190331。
 				System.out.print(node.value);
 				if (index > 0) {
 					node = arr[--index];
@@ -211,7 +215,7 @@ public class Tree {
 
 	/**
 	 * 
-	 * 后序遍历另一种非递归
+	 * 后序遍历另一种非递归，保留前置节点，左右中
 	 */
 	void afterOrder2(Node root) {
 

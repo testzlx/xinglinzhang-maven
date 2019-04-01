@@ -92,14 +92,14 @@ public class RateLimit {
 
         private void startThread() {
             ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-            scheduledExecutorService.scheduleAtFixedRate(new Thread(new Runnable() {
+            scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
                 @Override
                 public void run() {
                     index = (index + 1) % SlideWindowRateLimiter.this.buckets.length;
                     int val = SlideWindowRateLimiter.this.buckets[index].getAndSet(0);
                     SlideWindowRateLimiter.this.visit.addAndGet(-val);
                     }
-            }),100, 100, TimeUnit.MILLISECONDS);
+            },100, 100, TimeUnit.MILLISECONDS);
         }
 
         public boolean limit(){
