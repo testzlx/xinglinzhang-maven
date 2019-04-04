@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-public class SugTest {
+public class TrieTree {
 
 	public Node root;
 	HashSet<String> result = new HashSet();
@@ -138,11 +138,13 @@ public class SugTest {
 	}
 
 	public static void main(String[] args) {
-		SugTest t = new SugTest();
+		TrieTree t = new TrieTree();
 		t.insert("ab", Integer.valueOf(2));
 		t.insert("abba", Integer.valueOf(3));
 		t.insert("abcd", Integer.valueOf(5));
 		t.insert("bcd", Integer.valueOf(1));
+		t.insert("bce", Integer.valueOf(1));
+		t.insert("bcr34", Integer.valueOf(1));
 
 		System.out.println(t);
 

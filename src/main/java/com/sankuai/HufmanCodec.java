@@ -153,7 +153,7 @@ public class HufmanCodec {
         HufmanCodec hufmanCodec = new HufmanCodec();
         Node[] result = new Node[11];
         hufmanCodec.compose(result, hufmanCodec.init());
-        List<Character> characters = hufmanCodec.encode("ABBCEA");
+        List<Character> characters = hufmanCodec.encode("ABBCEAFBBDFAA");
         System.out.println("characters:" + characters);
         List<Character> origin = hufmanCodec.decode(characters, result);
         System.out.println("origin:" + origin);
