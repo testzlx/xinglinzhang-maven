@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a098061f-f473-4e72-a944-670503a215e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/LoserTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/RBTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/HufmanCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/HufmanCodec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/SugTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/TrieTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sankuai/SugTest$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sankuai/SugTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sankuai/Tree$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sankuai/Tree$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sankuai/Tree$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sankuai/Tree$TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sankuai/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sankuai/Tree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,22 +26,23 @@
     <session id="1251322105">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="58" />
+          <entry key="java" value="60" />
           <entry key="md" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="58" />
+          <entry key="JAVA" value="60" />
           <entry key="Markdown" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -57,12 +50,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="8690" />
+          <entry key="java" value="9633" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8690" />
+          <entry key="JAVA" value="9633" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -73,42 +66,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Tree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4563">
-              <caret line="583" column="38" lean-forward="true" selection-start-line="583" selection-start-column="38" selection-end-line="583" selection-end-column="38" />
-              <folding>
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#788#789#0" expanded="true" />
-                <element signature="e#5842#5848#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Queue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/LoserTree.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+            <state relative-caret-position="165">
+              <caret line="367" column="10" selection-start-line="367" selection-start-column="10" selection-end-line="367" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#837#838#0" expanded="true" />
-                <element signature="e#1183#1192#0" expanded="true" />
-                <element signature="e#1376#1393#0" expanded="true" />
+                <element signature="e#4249#4250#0" expanded="true" />
+                <element signature="e#4276#4277#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,6 +96,7 @@
       <find>chs</find>
       <find>createTree</find>
       <find>BPI</find>
+      <find>Node</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,7 +113,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/MapColor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Queue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/KMP.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Stack.java" />
@@ -160,6 +125,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/TrieTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/AVLTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/LoserTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/RBTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java" />
       </list>
     </option>
   </component>
@@ -169,9 +136,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="43" />
+    <option name="y" value="107" />
     <option name="width" value="1280" />
     <option name="height" value="738" />
   </component>
@@ -220,14 +187,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554371316699" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554463708421" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -257,9 +224,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoserTree">
+  <component name="RunManager" selected="Application.Graph">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankuai.Graph" />
+      <module name="xinglinzhang-maven" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sankuai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -376,9 +357,11 @@
       <item itemvalue="Application.TrieTree" />
       <item itemvalue="Application.Tree" />
       <item itemvalue="Application.MyBloomFilter" />
+      <item itemvalue="Application.Graph" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.TrieTree" />
         <item itemvalue="Application.Tree" />
         <item itemvalue="Application.HufmanCodec" />
@@ -398,28 +381,29 @@
       <updated>1553478494713</updated>
       <workItem from="1553478496421" duration="32222000" />
       <workItem from="1553772212365" duration="2071000" />
-      <workItem from="1554024877637" duration="46935000" />
+      <workItem from="1554024877637" duration="53962000" />
+      <workItem from="1554448935388" duration="8008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81228000" />
+    <option name="totallyTimeSpent" value="96263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="23" width="1280" height="738" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839744" visible="true" weight="0.23182553" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839744" weight="0.23505655" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.5016026" side_tool="true" weight="0.23182553" />
-      <window_info id="Structure" order="6" sideWeight="0.5016026" weight="0.23182553" />
+      <window_info id="Structure" order="6" sideWeight="0.5016026" visible="true" weight="0.23182553" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.49117175" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5730337" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37078652" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28019324" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37037036" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -484,6 +468,12 @@
           <line>55</line>
           <properties />
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java</url>
+          <line>340</line>
+          <properties />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -601,13 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="327" column="23" selection-start-line="327" selection-start-column="23" selection-end-line="327" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -733,8 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/LoserTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+        <state relative-caret-position="226">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#214#215#0" expanded="true" />
@@ -743,6 +726,24 @@
             <element signature="e#837#838#0" expanded="true" />
             <element signature="e#1183#1192#0" expanded="true" />
             <element signature="e#1376#1393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/RBTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="367" column="10" selection-start-line="367" selection-start-column="10" selection-end-line="367" selection-end-column="10" />
+          <folding>
+            <element signature="e#4249#4250#0" expanded="true" />
+            <element signature="e#4276#4277#0" expanded="true" />
           </folding>
         </state>
       </provider>

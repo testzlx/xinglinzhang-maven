@@ -311,29 +311,76 @@ public class Graph {
 		}
 	}
 	/**
-	 * 寻找某一节点到其它节点的最短路径，突然不想写了
+	 * 寻找某一节点到其它节点的最短路径，突然不想写了；坚持写下去20190405
 	 * @param v
 	 */
 	private void dijkstra(int v){
-		int vexCount = getVexCount();
-		preHandle();
-		int D[]= new int[vexCount],s[]=new int[vexCount],p[]=new int[vexCount];//D为节点v到其它各节点的距离,s为记录最短路径生成情况
-				//p为路径数组
-		
-		
-		
+		final float MAX = 10000f;
+		float[][] dist = {
+				{0f,6f,9f,8f,MAX,MAX},
+				{18f,0f,7f,MAX,MAX,10f},
+				{9f,MAX,0f,15f,MAX,MAX},
+				{MAX,MAX,12f,0f,MAX,MAX},
+				{MAX,MAX,4f,MAX,0f,MAX},
+				{24f,5f,MAX,25f,MAX,0f}
+				};
+		int n = dist[0].length,k = 100; //n为节点个数
+		float D[] =new float[n],min; //节点v到D数组下标节点的距离
+		int p[] = new int[n];
+		int s[] = new int[n]; //节点v到s数组下标节点是否找到最近路径标示
+		for(int i =0;i<n;i++){
+			D[i] = dist[v][i];
+			if(D[i] == MAX){
+				p[i] = 0;
+			}else{
+				p[i] = v;
+			}
+			s[i] = 0;
+		}
+		s[v] = 1; //v到v自己的路径可以确定为0;
+		for(int i=0;i<n-1;i++){
+			min = MAX +1;
+			for(int j = 0;j<n;j++){
+				if(s[j] ==0&& D[j] < min){
+					min = D[j];
+					k = j;
+				}
+			}
+			s[k] =1;
+			for(int j = 0;j<n;j++){
+				if(s[j] == 0 && D[j] > D[k]+dist[k][j]){
+					D[j] = D[k]+dist[k][j];
+					p[j] = k;
+				}
+			}
+		}
+		for(int i = 0;i<n;i++){
+			int pre;
+			System.out.print("距离: "+D[i] + "  " + i);
+			pre = p[i];
+			while(pre != 0 && pre != v){
+				System.out.print("<--"+ (pre));
+				pre = p[pre];
+			}
+			System.out.println("<---"+v);
+		}
+	}
+	//todo
+	private void floyd(){
+
 	}
 	public static void main(String[] args) {
 		Graph graph = new Graph();
-		 graph.createGraph(6,10);
+		// graph.createGraph(6,10);
 		// graph.DFSA(0);
 		// graph.BFSA(0);
-		 graph.prime(0);
+		// graph.prime(0);
 		 
 		// graph.createGraph2(5, 5);
 		// graph.DFSL(0);
 		// graph.BFSL(0);
 		//graph.kruskal(6, 10);
+		graph.dijkstra(5);
 		System.out.println("hello world  ");
 
 	}
