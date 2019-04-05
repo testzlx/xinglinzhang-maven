@@ -96,25 +96,31 @@ public class Graph {
 	 *            点的个数
 	 * @param arcCount
 	 *            边的个数
+	 *@param arcCount
+	 * 	 *        true 有向图，false：无向图
 	 */
-	private void createGraph(int vexCount, int arcCount) {
+	private void createGraph(int vexCount, int arcCount,boolean flag) {
 		root = new Node(vexCount);
 		visits = new int[vexCount];
 		System.out.println("准备创建 " + vexCount + " 个点的图,边的条数为 " + arcCount);
 		Scanner sc = new Scanner(System.in);
 		int i;
+		System.out.println("开始输入点信息 " );
 		for (i = 0; i < vexCount; i++) {
 			String tmp = sc.nextLine();
 			char ch = tmp.toCharArray()[0];
 			root.vextype[i] = ch;
 			// System.out.println("ch : "+ch);
 		}
+		System.out.println("开始输入边信息 " );
 		for (i = 0; i < arcCount; i++) {
 			String tmp = sc.nextLine();
 			String[] ss = tmp.split(DELEMETER);
 			root.arcs[Integer.parseInt(ss[0])][Integer.parseInt(ss[1])] = Integer.parseInt(ss[2]);
 			// 有向图，无向图
-			root.arcs[Integer.parseInt(ss[1])][Integer.parseInt(ss[0])] = Integer.parseInt(ss[2]);
+			if(!flag) {
+				root.arcs[Integer.parseInt(ss[1])][Integer.parseInt(ss[0])] = Integer.parseInt(ss[2]);
+			}
 		}
 		sc.close();
 	}
@@ -365,13 +371,47 @@ public class Graph {
 			System.out.println("<---"+v);
 		}
 	}
-	//todo
+	//todo于20190405
 	private void floyd(){
 
 	}
+
+	private void toposorta(Node root,int n){
+		int v = 1,found = -1;
+		int D[] = new int[n];
+		for(int k =0;k<n;k++){
+			for(int j= 0;j<n;j++) {
+				if (D[j] == 0) {
+					boolean flag = true;
+					for (int m = 0; m < n; m++) {
+						if (root.arcs[m][j] == 1) {
+							flag = false;
+							break;
+						}
+					}
+					if (flag) {
+						found = j;
+						break;
+					}
+				}
+			}
+			if(found != -1 ){
+				D[found] = v++;
+				System.out.println(root.vextype[found]);
+				for(int i=0;i<n;i++){
+					root.arcs[found][i] = 0;
+				}
+			}
+		}
+		if(v != n+1){
+			System.out.println("has a cycle");
+		}
+	}
+
 	public static void main(String[] args) {
 		Graph graph = new Graph();
-		// graph.createGraph(6,10);
+		 graph.createGraph(7,8,true);
+		graph.toposorta(graph.root,7);
 		// graph.DFSA(0);
 		// graph.BFSA(0);
 		// graph.prime(0);
@@ -380,8 +420,7 @@ public class Graph {
 		// graph.DFSL(0);
 		// graph.BFSL(0);
 		//graph.kruskal(6, 10);
-		graph.dijkstra(5);
-		System.out.println("hello world  ");
-
+		//graph.dijkstra(5);
+		//System.out.println("hello world  ");
 	}
 }
