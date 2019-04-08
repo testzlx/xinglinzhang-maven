@@ -140,6 +140,15 @@ public class SkipList<E> {
 		skipList.insert(5);
 		skipList.insert(7);
 		skipList.insert(1);
+		skipList.insert(19);
+		skipList.insert(10);
+		skipList.insert(30);
+		skipList.insert(41);
+		skipList.insert(49);
+		skipList.insert(15);
+		skipList.insert(190);
+		skipList.insert(1);
+		skipList.insert(109);
 		skipList.find(4);
 		skipList.find(2);
 		skipList.delete(8);

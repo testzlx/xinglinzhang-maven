@@ -6,8 +6,8 @@ package com.sankuai;
  *
  */
 public class Stock {
-	//private int[] prices = { 11, 13, 24, 29, 7, 2, 28, 1, 4, 5 };
-	private int[] prices = { 11, 10};
+	private int[] prices = { 11, 13, 24, 29, 7, 2, 28, 1, 4, 5 };
+	//private int[] prices = { 11, 10};
 
 	public static void main(String[] args) {
 		Stock stock = new Stock();

@@ -321,7 +321,7 @@ public class Sort {
 	/**
 	 * 计数排序
 	 * 时间复杂度O(n+k),k为n数组的取值范围，空间复杂度O(3k),当k值大于nlog(n)时，不建议使用
-	 * 
+	 * 参考 http://www.cnblogs.com/kaituorensheng/archive/2013/02/23/2923877.html
 	 * 
 	 */
 	private void jishuSort(){
@@ -399,8 +399,8 @@ public class Sort {
 		sort.mergeSortMain();
 		sort.heapSortMain();
 		*/
-		//sort.jishuSort();
-		sort.middleFindMain(20);
+		sort.jishuSort();
+		//sort.middleFindMain(20);
 	}
 
 }
