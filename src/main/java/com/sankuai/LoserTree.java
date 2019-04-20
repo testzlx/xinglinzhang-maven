@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//败者树
+//败者树及K路归并算法
 public class LoserTree {
 
     private int[] tree;

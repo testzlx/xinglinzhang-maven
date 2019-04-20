@@ -7,12 +7,12 @@ public class WaitAndNotify {
         {
             Person person = new Person();
             new Thread(new Consumer("消费者一", person)).start();
-           // new Thread(new Consumer("消费者二", person)).start();
-           // new Thread(new Consumer("消费者三", person)).start();
+            new Thread(new Consumer("消费者二", person)).start();
+            new Thread(new Consumer("消费者三", person)).start();
 
             new Thread(new Producer("生产者一", person)).start();
-           // new Thread(new Producer("生产者一", person)).start();
-           // new Thread(new Producer("生产者一", person)).start();
+            new Thread(new Producer("生产者一", person)).start();
+            new Thread(new Producer("生产者一", person)).start();
 
         }
     }
@@ -36,7 +36,7 @@ public class WaitAndNotify {
                 try
                 {
                     person.produce();
-                    Thread.sleep(13);
+                   // Thread.sleep(13);
                 } catch (InterruptedException e)
                 {
                     e.printStackTrace();
@@ -64,7 +64,7 @@ public class WaitAndNotify {
             while (true) {
                 try {
                     person.consume();
-                    Thread.sleep(10);
+                  //  Thread.sleep(10);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

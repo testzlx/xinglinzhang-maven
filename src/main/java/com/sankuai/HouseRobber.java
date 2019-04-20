@@ -2,6 +2,7 @@ package com.sankuai;
 
 /**
  * 入室抢劫,每户人家组成一个环形，首尾相连
+ * 题目场景描述：https://blog.csdn.net/qq_33618717/article/details/78079232
  * 
  * @author zhanglinxing
  * @date 2017年5月24日 上午9:57:09
