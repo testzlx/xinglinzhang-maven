@@ -50,7 +50,7 @@ public class Sort {
 		}
 	}
 	/**
-	 * 快速排序
+	 * 快速排序,有多种写法请参考https://segmentfault.com/a/1190000004410119
 	 */
 	private void quickSortMain() {
 		System.out.println("快速排序");
@@ -64,11 +64,14 @@ public class Sort {
 		// int index;
 		if (low < high) {
 			int index = findIndex(arr, low, high);
+			//第二种  int index = findIndex2(arr, low, high);
+			//第三种 int index = findIndex3(arr, low, high);
+			//第四种 int index = findIndex(arr, low, high);
 			quickSort(arr, low, index - 1);
 			quickSort(arr, index + 1, high);
 		}
 	}
-
+	//快速排序的第1种写法
 	private int findIndex(int[] arr, int low, int high) {
 		int tmp = arr[low];
 		while (low < high) {
@@ -86,6 +89,44 @@ public class Sort {
 		arr[low] = tmp;
 		return low;
 
+	}
+	//快速排序的第二种写法
+	public int findIndex2(int[] arr,int low,int high){
+		int tmp = arr[low];
+		int p = low +1;
+		int q= high;
+		while (p <=q){
+			while(arr[p] < tmp && p<=q){
+				p++;
+			}
+			while(arr[p] > tmp && p<=q){
+				q--;
+			}
+			if(p <=q) {
+				swap(arr, p, q);
+			}
+		}
+		swap(arr, low, q);
+		return q;
+	}
+	//快速排序的第3种写法
+	public int findIndex3(int[] arr,int low,int high){
+		int tmp = arr[high];
+		int storeIndex = low;
+		for (int i = low;i<high;i++){
+			if(arr[i] < tmp){
+				swap(arr,i,storeIndex);
+				storeIndex ++;
+			}
+		}
+		swap(arr,storeIndex,high);
+		return storeIndex;
+	}
+
+	private void swap(int[] arr,int i,int j){
+		arr[i] = arr[i] + arr[j];
+		arr[j] = arr[i] - arr[j];
+		arr[i] = arr[i] - arr[j];
 	}
 	/**
 	 * 二分查找
