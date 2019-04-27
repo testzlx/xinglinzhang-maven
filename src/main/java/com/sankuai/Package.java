@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class Package {
 	
-	final static int  MAXVALUE = 100;
+	final static int  MAXVALUE = 100; //代表从一堆零钱找不出来对应的总钱
 	/**
 	 * 0/1背包问题
 	 * @param items
@@ -19,7 +19,7 @@ public class Package {
 	 static int[][] selectObject(Item[] items,int size){
 		 int max[][] = new int[items.length][size+1];
 		 int i,j;
-		 for(i = 1;i <= 10;i++){
+		 for(i = 1;i <= size;i++){
 			 for(j = 0;j < items.length;j++){
 				 if(items[j].weight > i){
 					 if(j != 0 )
@@ -39,6 +39,7 @@ public class Package {
 	 /**
 	  * 找零钱问题
 	  * @param args
+	  * 返回的值数组是 、数组下标是要找的前，值是选择的零钱元素的个数
 	  */
 	 static int[] chargeMoney(int[] arr,int left){
 		 //中间保存状态数组
@@ -70,10 +71,11 @@ public class Package {
 		items[2] = new Item(6, 5);
 		items[3] = new Item(5, 4);
 		items[4] = new Item(4, 6);
-		int size = 300;
-		//print(selectObject(items, size));
-		int arr[] = {3,2,5,13,96,34,21,34,67};
-		chargeMoney(arr, size);
+		int size = 6;
+		print(selectObject(items, size));
+	//	int arr[] = {1,2,5,10,20,50};
+	//	int[] result = chargeMoney(arr, size);
+	//	System.out.println("result:"+result);
 	
 	}
 
@@ -81,7 +83,7 @@ public class Package {
 		int i,j;
 		for( i = 0;i<result[0].length;i++)
 			for(j = 0;j< result.length;j++){
-				System.out.println(result[j][i]);
+				System.out.println("j="+j+" i= "+ i+" value:"+result[j][i]);
 			}
 	}
 	
