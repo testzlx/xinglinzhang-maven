@@ -96,6 +96,36 @@ public class Tree {
 
     }
 
+
+    //leetcode  https://leetcode.com/problems/maximum-binary-tree/
+    public Node constructMaximumBinaryTree(char[] nums) {
+        return construct(null, nums, 0, nums.length - 1);
+
+    }
+
+    public Node construct(Node root, char[] nums, int l, int r) {
+        if (l <= r) {
+            int max_i = max(nums, l, r);
+            if (root == null) {
+                root = new Node(nums[max_i]);
+            }
+            root.left = construct(root.left, nums, l, max_i - 1);
+            root.right = construct(root.right, nums, max_i + 1, r);
+        }
+        return root;
+    }
+
+
+    public int max(char[] nums, int l, int r) {
+        int max_i = l;
+        for (int i = l; i <= r; i++) {
+            if (nums[max_i] < nums[i])
+                max_i = i;
+        }
+        return max_i;
+    }
+
+
     /*********************************
      *
      * 递归
@@ -576,7 +606,7 @@ public class Tree {
         return sum;
     }
 
-    char[]  longestPath ;
+    char[] longestPath;
     char[] tmpPath = new char[30];
     int longestDepth = 0;
 
@@ -587,7 +617,7 @@ public class Tree {
             if (node.left == null && node.right == null) {
                 if (index > longestDepth) {
                     longestDepth = index;
-                    longestPath =  tmpPath;
+                    longestPath = tmpPath;
                 }
             }
             longPath(node.left);
@@ -720,9 +750,14 @@ public class Tree {
 
     public static void main(String[] args) throws Exception {
         Tree tree = new Tree();
+        char[] chars = {'d', 'c', 'b', 'g', 'a', 'f'};
+        Node node = tree.constructMaximumBinaryTree(chars);
+        System.out.println("node:" + node);
+        /*
          tree.root = tree.createTree();
         tree.longPath(tree.root);
         System.out.println(tree.longestPath);
+        */
         // System.out.println(tree.root.left.right.value);
 
         /**
