@@ -1,5 +1,7 @@
 package com.sankuai.algorithm;
 
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +16,15 @@ public class Main {
 
         int commonCount = lcs("cnblogs","belong");
         System.out.println("lcs commonCount:" + commonCount);
+
+        List<String> letters =  letterCasePermutation2("1a2b");
+        System.out.println("letter:"+letters);
+        char[] chars = {'C','C','C','D','D','D'};
+        int count = leastInterval(chars,2);
+        System.out.println("leastInterval , count: "+ count);
+        int num[] = {2,3,1,1,4};
+        boolean canJump =canJump(num);
+        System.out.println("can jump: "+canJump);
     }
 
     //https://leetcode.com/problems/median-of-two-sorted-arrays/solution/
@@ -126,6 +137,135 @@ public class Main {
             }
         }
         return c[len1][len2];
+    }
+
+    //走迷宫，上下左右可以走，同序（顺序，逆序）最大的路径(个人感觉：回溯法 && 动态规划)
+    // https://leetcode.com/problems/longest-increasing-path-in-a-matrix/discuss/78308/15ms-Concise-Java-Solution
+
+    static  int dirs[][] = {{0,1},{0,-1},{-1,0},{1,0}};
+    private  static int longestIncreasingPath(int[][] matrix){
+        int m = matrix.length,n = matrix[0].length ,max = 0;
+        int cache[][] = new int[m+1][n+1];
+        for(int i =0;i<m;i++){
+            for (int j=0;j<n;j++){
+                int len = dfs(matrix, i, j, m, n, cache);
+                max = Math.max(max, len);
+            }
+        }
+        return max;
+    }
+
+    private static int dfs(int[][] matrix, int i, int j, int m, int n, int[][] cache) {
+        if(cache[i][j] != 0){
+            return cache[i][j];
+        }
+        int max = 1;
+        for(int[] dir : dirs){
+            int x = i+dir[0] , y = j+dir[1];
+            if(x < 0 || x > m-1 || y< 0 || y>n-1 || matrix[x][y] >matrix[i][j]){
+                continue;
+            }
+            int length = 1 + dfs(matrix, x, y, m, n, cache);
+            max = Math.max(max, length);
+        }
+        cache[i][j] = max;
+        return max;
+    }
+
+    //回溯法 https://leetcode.com/problems/letter-case-permutation/discuss/115485/Java-Easy-BFS-DFS-solution-with-explanation
+    //把一字符串变换大小写并把所有情况输出
+    //Examples:
+    //Input: S = "a1b2"
+    //Output: ["a1b2", "a1B2", "A1b2", "A1B2"]
+    private static List<String> letterCasePermutation(String s){
+        List<String> lists = new ArrayList<String>();
+        helper(s.toCharArray(),0,lists);
+        return lists;
+    }
+
+    private static void helper(char[] chars, int pos, List<String> lists) {
+        if(pos == chars.length ){
+            lists.add(new String(chars));
+            return;
+        }
+        if(chars[pos] >= '0' && chars[pos] <= '9'){
+            helper(chars,pos+1,lists);
+            return;
+        }
+        chars[pos] =  Character.toLowerCase(chars[pos]);
+        helper(chars,pos+1,lists);
+        chars[pos] =  Character.toUpperCase(chars[pos]);
+        helper(chars,pos+1,lists);
+    }
+
+    //把一字符串变换大小写并把所有情况输出(好聪明啊，队列中不会重复元素)
+    //广度遍历
+    private static List<String> letterCasePermutation2(String s){
+        Queue<String> queue  = new LinkedList<String>();
+        queue.offer(s);
+        for(int i =0 ;i<s.length();i++){
+            if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
+                continue;
+            }
+            int size = queue.size();
+            for(int j = 0;j< size;j++){
+                String cur =   queue.poll();
+                char[] chs = cur.toCharArray();
+
+                chs[i] = Character.toUpperCase(chs[i]);
+                queue.offer(String.valueOf(chs));
+
+                chs[i] = Character.toLowerCase(chs[i]);
+                queue.offer(String.valueOf(chs));
+            }
+        }
+        return new ArrayList<>(queue);
+    }
+
+
+    //https://leetcode.com/problems/task-scheduler/
+    //
+    public static  int leastInterval(char[] tasks, int n) {
+        int[] map = new int[26];
+        for (char c: tasks)
+            map[c - 'A']++;
+        Arrays.sort(map);
+        int max_val = map[25] - 1, idle_slots = max_val * n;
+        for (int i = 24; i >= 0 && map[i] > 0; i--) {
+            idle_slots -= Math.min(map[i], max_val);
+        }
+        return idle_slots > 0 ? idle_slots + tasks.length : tasks.length;
+    }
+
+    //跳格子游戏  是否可以跳到终点
+    public  static boolean canJump(int[] nums) {
+        return canJumpFromPosition(0, nums);
+    }
+    public static boolean canJumpFromPosition(int position, int[] nums) {
+        if (position == nums.length - 1) {
+            return true;
+        }
+
+        int furthestJump = Math.min(position + nums[position], nums.length - 1);
+        for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {
+            if (canJumpFromPosition(nextPosition, nums)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    //贪心算法  nb 跳格子游戏
+    public static  boolean canJump2(int[] nums) {
+        int lastPos = nums.length - 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i + nums[i] >= lastPos) {
+                lastPos = i;
+            }
+        }
+        return lastPos == 0;
     }
 
 }

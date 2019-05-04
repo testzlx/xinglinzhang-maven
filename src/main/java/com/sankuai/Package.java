@@ -40,6 +40,7 @@ public class Package {
 	  * 找零钱问题
 	  * @param args
 	  * 返回的值数组是 、数组下标是要找的前，值是选择的零钱元素的个数
+	  * 个人理解：既有动态规划也有贪心算法思想（先找最大钱）
 	  */
 	 static int[] chargeMoney(int[] arr,int left){
 		 //中间保存状态数组
