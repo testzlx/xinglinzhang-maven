@@ -268,4 +268,18 @@ public class Main {
         return lastPos == 0;
     }
 
+    //贪心算法  小孩子分蛋糕问题求解 https://leetcode.com/problems/assign-cookies/
+     private static  int assignCookies(int[] children,int[] cookies){
+         Arrays.sort(children);
+         Arrays.sort(cookies);
+         int i ,j;
+         for(i=0,j=0;i<children.length && j < cookies.length; j++ ){
+             if(children[i] <= cookies[j]){
+                 i++;
+             }
+         }
+         return i;
+
+     }
+
 }

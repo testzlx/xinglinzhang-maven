@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a098061f-f473-4e72-a944-670503a215e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,7 +37,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="11" />
-          <entry key="java" value="176" />
+          <entry key="java" value="178" />
           <entry key="md" value="1" />
           <entry key="xml" value="4" />
         </counts>
@@ -45,7 +45,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="11" />
-          <entry key="JAVA" value="176" />
+          <entry key="JAVA" value="178" />
           <entry key="Markdown" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -54,14 +54,14 @@
         <counts>
           <entry key="class" value="4" />
           <entry key="dummy" value="23" />
-          <entry key="java" value="19832" />
+          <entry key="java" value="20476" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="19832" />
+          <entry key="JAVA" value="20476" />
           <entry key="PLAIN_TEXT" value="23" />
           <entry key="XML" value="1" />
         </counts>
@@ -74,23 +74,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="145" column="30" lean-forward="true" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
-              <folding>
-                <element signature="e#4406#4407#0" expanded="true" />
-                <element signature="e#4433#4434#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="261" column="8" selection-start-line="261" selection-start-column="8" selection-end-line="267" selection-end-column="28" />
+            <state relative-caret-position="228">
+              <caret line="268" column="5" lean-forward="true" selection-start-line="268" selection-start-column="5" selection-end-line="268" selection-end-column="5" />
               <folding>
                 <element signature="e#5652#5660#0" expanded="true" />
                 <element signature="e#6427#6435#0" expanded="true" />
@@ -101,51 +88,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Package.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/LinkedList.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/SegmentTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
+            <state relative-caret-position="298">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
-                <element signature="e#20770#20771#0" expanded="true" />
-                <element signature="e#20799#20800#0" expanded="true" />
+                <element signature="e#1032#1033#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
+                <element signature="e#2782#2936#0" expanded="true" />
+                <element signature="e#2935#2936#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Deque.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2018">
-              <caret line="192" column="37" selection-start-line="192" selection-start-column="37" selection-end-line="192" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Queue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="143" column="20" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ArrayBlockingQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2225">
-              <caret line="391" column="51" lean-forward="true" selection-start-line="391" selection-start-column="51" selection-end-line="391" selection-end-column="51" />
+            <state relative-caret-position="131">
+              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -215,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/recursion/Perm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/recursion/EquationCount.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/SkipList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Segment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/SegmentTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/WaitAndNotify.java" />
@@ -231,8 +192,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/PriorityQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/LRUCache1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Tree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Package.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java" />
       </list>
     </option>
   </component>
@@ -253,8 +215,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="738" />
@@ -324,7 +285,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556984062247" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557045176933" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -358,7 +319,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Stock">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -407,13 +368,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sankuai.netty.TimeClient" />
+    <configuration name="SegmentTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankuai.SegmentTree" />
       <module name="xinglinzhang-maven" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sankuai.netty.*" />
+          <option name="PATTERN" value="com.sankuai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -421,13 +382,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sankuai.netty.TimeServer" />
+    <configuration name="Stock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankuai.Stock" />
       <module name="xinglinzhang-maven" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sankuai.netty.*" />
+          <option name="PATTERN" value="com.sankuai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -487,19 +448,19 @@
     <list>
       <item itemvalue="Application.LoserTree" />
       <item itemvalue="Application.xinglinzhang-maven" />
-      <item itemvalue="Application.TimeServer (1)" />
-      <item itemvalue="Application.TimeClient (1)" />
       <item itemvalue="Application.Package" />
       <item itemvalue="Application.Tree" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.SegmentTree" />
+      <item itemvalue="Application.Stock" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Stock" />
+        <item itemvalue="Application.SegmentTree" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Tree" />
         <item itemvalue="Application.Package" />
-        <item itemvalue="Application.TimeClient (1)" />
-        <item itemvalue="Application.TimeServer (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -525,18 +486,18 @@
       <workItem from="1555421890152" duration="3289000" />
       <workItem from="1555723244689" duration="5454000" />
       <workItem from="1555911327535" duration="14685000" />
-      <workItem from="1556250278596" duration="27222000" />
+      <workItem from="1556250278596" duration="32181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209363000" />
+    <option name="totallyTimeSpent" value="214322000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="738" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49839744" visible="true" weight="0.26655897" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839744" visible="true" weight="0.26655897" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -546,7 +507,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.49117175" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.16693419" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32263243" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30176565" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -720,17 +681,16 @@
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/concurrent/ScheduledThreadPoolExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -974,17 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/SegmentTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#1032#1033#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1111,10 +1060,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Package.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/algorithm/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="261" column="8" selection-start-line="261" selection-start-column="8" selection-end-line="267" selection-end-column="28" />
+        <state relative-caret-position="228">
+          <caret line="268" column="5" lean-forward="true" selection-start-line="268" selection-start-column="5" selection-end-line="268" selection-end-column="5" />
           <folding>
             <element signature="e#5652#5660#0" expanded="true" />
             <element signature="e#6427#6435#0" expanded="true" />
@@ -1124,10 +1080,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Package.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/SegmentTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        <state relative-caret-position="298">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#2782#2936#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>
