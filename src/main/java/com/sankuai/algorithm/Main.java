@@ -28,7 +28,7 @@ public class Main {
     }
 
     //https://leetcode.com/problems/median-of-two-sorted-arrays/solution/
-    //找两个数组的中位数
+    //找两个数组的中位数，HARD模式,不看
     public static double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length;
         int n = B.length;
