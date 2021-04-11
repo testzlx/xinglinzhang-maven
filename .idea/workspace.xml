@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a098061f-f473-4e72-a944-670503a215e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode1406.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode44.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode62.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode95_unfinish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode_15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/recursion/BackTrace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sankuai/BackTrace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sankuai/BackTrace.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,14 +67,14 @@
         <counts>
           <entry key="class" value="4" />
           <entry key="dummy" value="32" />
-          <entry key="java" value="23942" />
+          <entry key="java" value="24326" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="23942" />
+          <entry key="JAVA" value="24326" />
           <entry key="PLAIN_TEXT" value="32" />
           <entry key="XML" value="4" />
         </counts>
@@ -96,10 +87,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/recursion/BackTrace.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/BackTrace.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="184">
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -154,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/MapColor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Queue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/KMP.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Stack.java" />
@@ -205,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/leetcode/Leetcode1406.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/Stock.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sankuai/recursion/BackTrace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sankuai/BackTrace.java" />
       </list>
     </option>
   </component>
@@ -226,8 +217,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="264" />
-    <option name="y" value="65" />
+    <option name="x" value="344" />
+    <option name="y" value="70" />
     <option name="width" value="1228" />
     <option name="height" value="724" />
   </component>
@@ -303,7 +294,7 @@
     <property name="SearchEverywhereHistoryKey" value="FilterInvocationSecurityMetadataSource&#9;PSI&#9;JAVA://org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource&#10;sessionmanager&#9;PSI&#9;JAVA://sun.security.pkcs11.SessionManager&#10;springSecurityFilterChain&#9;PSI&#9;JAVA://org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration#springSecurityFilterChain&#10;ExceptionTr&#9;PSI&#9;JAVA://org.springframework.security.web.access.ExceptionTranslationFilter&#10;SecurityContextPersistenceFilter&#9;PSI&#9;JAVA://org.springframework.security.web.context.SecurityContextPersistenceFilter&#10;ChannelProcessingFilter&#9;PSI&#9;JAVA://org.springframework.security.web.access.channel.ChannelProcessingFilter&#10;UserDetailsService&#9;FILE&#9;jar:///Users/zhanglinxing/.m2/repository/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetailsService.class&#10;JdbcDaoImpl&#9;FILE&#9;jar:///Users/zhanglinxing/.m2/repository/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class&#10;DaoAuthenticationProvider&#9;PSI&#9;JAVA://org.springframework.security.authentication.dao.DaoAuthenticationProvider&#10;AuthenticationManager&#9;PSI&#9;JAVA://org.springframework.security.authentication.AuthenticationManager&#10;ConcurrentSessionFilter&#9;PSI&#9;JAVA://org.springframework.security.web.session.ConcurrentSessionFilter&#10;LogoutFilter&#9;PSI&#9;JAVA://org.springframework.security.web.authentication.logout.LogoutFilter" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1618111146068" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1618112219414" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -315,15 +306,18 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/sankuai" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.sankuai.netty" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/sankuai" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.sankuai.netty" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.sankuai" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/sankuai" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -338,20 +332,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Leetcode1406">
+  <component name="RunManager" selected="Application.BackTrace">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Leetcode11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sankuai.leetcode.Leetcode11" />
+    <configuration name="BackTrace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankuai.BackTrace" />
       <module name="xinglinzhang-maven" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sankuai.leetcode.*" />
+          <option name="PATTERN" value="com.sankuai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -359,8 +353,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Leetcode12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sankuai.leetcode.Leetcode12" />
+    <configuration name="Leetcode11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sankuai.leetcode.Leetcode11" />
       <module name="xinglinzhang-maven" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -467,19 +461,19 @@
     <list>
       <item itemvalue="Application.LoserTree" />
       <item itemvalue="Application.xinglinzhang-maven" />
-      <item itemvalue="Application.Leetcode12" />
       <item itemvalue="Application.Leetcode11" />
       <item itemvalue="Application.Leetcode_15" />
       <item itemvalue="Application.Leetcode44" />
       <item itemvalue="Application.Leetcode1406" />
+      <item itemvalue="Application.BackTrace" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BackTrace" />
         <item itemvalue="Application.Leetcode1406" />
         <item itemvalue="Application.Leetcode44" />
         <item itemvalue="Application.Leetcode_15" />
         <item itemvalue="Application.Leetcode11" />
-        <item itemvalue="Application.Leetcode12" />
       </list>
     </recent_temporary>
   </component>
@@ -523,18 +517,18 @@
       <workItem from="1588521634427" duration="45000" />
       <workItem from="1617201284859" duration="39000" />
       <workItem from="1617253534002" duration="868000" />
-      <workItem from="1617618822622" duration="952000" />
+      <workItem from="1617618822622" duration="2048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266072000" />
+    <option name="totallyTimeSpent" value="267168000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="264" y="65" width="1228" height="724" extended-state="0" />
+    <frame x="307" y="242" width="1228" height="724" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49839744" visible="true" weight="0.2757167" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839744" visible="true" weight="0.2757167" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -543,7 +537,7 @@
       <window_info id="Structure" order="6" sideWeight="0.5016026" weight="0.27593818" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.49117175" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24466339" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24466339" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3004926" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1104,10 +1098,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/recursion/BackTrace.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sankuai/BackTrace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="184">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
