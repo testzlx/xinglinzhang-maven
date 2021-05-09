@@ -415,7 +415,7 @@ public class Sort {
 	private void heapAdjust(int[] copy,int index){
 		for(int i = (index -1)/2;i>=0;i--){
 			int tmp = 2*i+1;
-			if(copy[tmp] > copy[tmp+1] && tmp+1 <= index){
+			if(tmp+1 <= index && copy[tmp] > copy[tmp+1]){
 				tmp +=1;
 			}
 			if(copy[tmp] < copy[i]){
