@@ -410,8 +410,8 @@ public class Graph {
 
 	public static void main(String[] args) {
 		Graph graph = new Graph();
-		 graph.createGraph(7,8,true);
-		graph.toposorta(graph.root,7);
+		//graph.createGraph(7,8,true);
+		//graph.toposorta(graph.root,7);
 		// graph.DFSA(0);
 		// graph.BFSA(0);
 		// graph.prime(0);
@@ -420,7 +420,7 @@ public class Graph {
 		// graph.DFSL(0);
 		// graph.BFSL(0);
 		//graph.kruskal(6, 10);
-		//graph.dijkstra(5);
+		graph.dijkstra(5);
 		//System.out.println("hello world  ");
 	}
 }

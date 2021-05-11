@@ -42,6 +42,7 @@ public class Stock {
 			sum += local[i];
 			if(sum > maxSum){
 				maxSum = sum;
+
 				end = i;
 			}else {
 				if(sum < 0){

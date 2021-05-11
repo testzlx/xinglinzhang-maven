@@ -63,18 +63,6 @@ public class RateLimit {
     }
 
     //滑动窗口
-    public boolean limit4(){
-        long currentTime = System.currentTimeMillis();
-        if(currentTime -now>1000){
-            now = currentTime;
-            count.set(1);
-        }else{
-            count.addAndGet(1);
-        }
-        return count.get() > maxPreSecondVisit ? false : true;
-    }
-
-    //滑动窗口
     public static  class SlideWindowRateLimiter {
         private AtomicInteger[] buckets;
         private int index=0;

@@ -31,7 +31,7 @@ public class TrieTree {
 			node.isComplete = true;
 			node.indexOut = indexOut;
 		} else {
-			node.centerChild = insert(word, node.centerChild, index = Integer
+			node.centerChild = insert(word, node.centerChild, Integer
 					.valueOf(index.intValue() + 1), indexOut);
 		}
 
