@@ -33,10 +33,10 @@ public class HouseRobber {
 		} else {
 			for (int i = start + 2; i <= end; i++) {
 				result[i] = Math.max(result[i - 2] + arr[i], result[i - 1]);
-				ret = result[i];
+				//ret = result[i];
 			}
 		}
-		return ret;
+		return result[end];
 	}
 
 	public static void main(String[] args) {

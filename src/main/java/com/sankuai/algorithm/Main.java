@@ -17,7 +17,7 @@ public class Main {
         int commonCount = lcs("cnblogs","belong");
         System.out.println("lcs commonCount:" + commonCount);
 
-        List<String> letters =  letterCasePermutation2("1a2b");
+        List<String> letters =  letterCasePermutation2("abc");
         System.out.println("letter:"+letters);
         char[] chars = {'C','C','C','D','D','D'};
         int count = leastInterval(chars,2);

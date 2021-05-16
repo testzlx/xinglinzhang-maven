@@ -1,6 +1,7 @@
 package com.sankuai.recursion;
 
 //整数划分问题
+// https://blog.csdn.net/weixin_35909255/article/details/54896972
 public class EquationCount {
 
    static int count(int n,int m){
@@ -16,6 +17,6 @@ public class EquationCount {
    }
 
     public static void main(String[] args) {
-        System.out.println(count(6,2));
+        System.out.println(count(6,4));
     }
 }
