@@ -10,21 +10,11 @@ public class Main {
         double result = findMedianSortedArrays(a, b);
         System.out.println("result:" + result);
 
-        String str = longestPalindrome("babad");
-        System.out.println("str:"+str);
-
-
-        int commonCount = lcs("cnblogs","belong");
-        System.out.println("lcs commonCount:" + commonCount);
-
         List<String> letters =  letterCasePermutation2("abc");
         System.out.println("letter:"+letters);
         char[] chars = {'C','C','C','D','D','D'};
         int count = leastInterval(chars,2);
         System.out.println("leastInterval , count: "+ count);
-        int num[] = {2,3,1,1,4};
-        boolean canJump =canJump(num);
-        System.out.println("can jump: "+canJump);
     }
 
     //https://leetcode.com/problems/median-of-two-sorted-arrays/solution/
@@ -76,68 +66,10 @@ public class Main {
         return 0.0;
     }
 
-    //找出字符串最大回文子串https://leetcode.com/problems/longest-palindromic-substring/  动态规划思想
-    public  static String longestPalindrome(String s) {
-        int n = s.length();
-        String res = null;
 
-        boolean[][] dp = new boolean[n][n];
 
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = i; j < n; j++) {
-                dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
 
-                if (dp[i][j] && (res == null || j - i + 1 > res.length())) {
-                    res = s.substring(i, j + 1);
-                }
-            }
-        }
 
-        return res;
-    }
-    //找出字符串最大回文子串 递归思想  https://leetcode.com/problems/longest-palindromic-substring/discuss/2928/Very-simple-clean-java-solution
-    static int start = 0,maxLen = 0;
-    public  static String longestPalindrome2(String s) {
-        int size = s.length();
-        if(size < 2){
-            return s;
-        }
-        for(int i = 1;i<size ;i++){
-            extendPalindrome(s,i,i);
-            extendPalindrome(s,i,i+1);
-        }
-         return s.substring(start, start + maxLen);
-    }
-
-    private static void extendPalindrome(String s, int i, int j) {
-        while(i >=0 && j<s.length() -1 && s.charAt(i) == s.charAt(j)){
-            i--;
-            j++;
-        }
-        if(maxLen <j+1-i ){
-            maxLen = j+1-i;
-            start = i;
-        }
-    }
-
-    //求最长公共子序列（LCS  longest common sequences） http://www.cnblogs.com/en-heng/p/3963803.html  动态规划思想
-    public static int lcs(String str1, String str2) {
-        int len1 = str1.length();
-        int len2 = str2.length();
-        int c[][] = new int[len1+1][len2+1];
-        for (int i = 0; i <= len1; i++) {
-            for( int j = 0; j <= len2; j++) {
-                if(i == 0 || j == 0) {
-                    c[i][j] = 0;
-                } else if (str1.charAt(i-1) == str2.charAt(j-1)) {
-                    c[i][j] = c[i-1][j-1] + 1;
-                } else {
-                    c[i][j] = Math.max(c[i - 1][j], c[i][j - 1]);
-                }
-            }
-        }
-        return c[len1][len2];
-    }
 
     //走迷宫，上下左右可以走，同序（顺序，逆序）最大的路径(个人感觉：回溯法 && 动态规划)
     // https://leetcode.com/problems/longest-increasing-path-in-a-matrix/discuss/78308/15ms-Concise-Java-Solution
@@ -170,32 +102,6 @@ public class Main {
         }
         cache[i][j] = max;
         return max;
-    }
-
-    //回溯法 https://leetcode.com/problems/letter-case-permutation/discuss/115485/Java-Easy-BFS-DFS-solution-with-explanation
-    //把一字符串变换大小写并把所有情况输出
-    //Examples:
-    //Input: S = "a1b2"
-    //Output: ["a1b2", "a1B2", "A1b2", "A1B2"]
-    private static List<String> letterCasePermutation(String s){
-        List<String> lists = new ArrayList<String>();
-        helper(s.toCharArray(),0,lists);
-        return lists;
-    }
-
-    private static void helper(char[] chars, int pos, List<String> lists) {
-        if(pos == chars.length ){
-            lists.add(new String(chars));
-            return;
-        }
-        if(chars[pos] >= '0' && chars[pos] <= '9'){
-            helper(chars,pos+1,lists);
-            return;
-        }
-        chars[pos] =  Character.toLowerCase(chars[pos]);
-        helper(chars,pos+1,lists);
-        chars[pos] =  Character.toUpperCase(chars[pos]);
-        helper(chars,pos+1,lists);
     }
 
     //把一字符串变换大小写并把所有情况输出(好聪明啊，队列中不会重复元素)
@@ -237,24 +143,7 @@ public class Main {
         return idle_slots > 0 ? idle_slots + tasks.length : tasks.length;
     }
 
-    //跳格子游戏  是否可以跳到终点
-    public  static boolean canJump(int[] nums) {
-        return canJumpFromPosition(0, nums);
-    }
-    public static boolean canJumpFromPosition(int position, int[] nums) {
-        if (position == nums.length - 1) {
-            return true;
-        }
 
-        int furthestJump = Math.min(position + nums[position], nums.length - 1);
-        for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {
-            if (canJumpFromPosition(nextPosition, nums)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
 
     //贪心算法  nb 跳格子游戏

@@ -291,7 +291,7 @@ public class Tree {
     /**
      * 先序遍历
      *
-     * @param 根节点
+     * @param root
      */
     void preOrder(Node root) {
         if (root != null) {
@@ -302,7 +302,8 @@ public class Tree {
     }
 
     /**
-     * @param 中序遍历
+     *  中序遍历
+     * @param
      */
     void midOrder(Node root) {
         if (root != null) {
@@ -313,7 +314,8 @@ public class Tree {
     }
 
     /**
-     * @param 后序遍历
+     *  后序遍历
+     * @param
      */
     void afterOrder(Node root) {
         if (root != null) {
@@ -324,7 +326,7 @@ public class Tree {
     }
 
     /*****************************************************************************/
-    /**
+    /**  左右中
      * 先序 非递归遍历
      */
 
@@ -344,7 +346,9 @@ public class Tree {
     }
 
     /**
-     * @param 中序遍历
+     *  中序遍历 中左右
+     *
+     * @param
      */
     void preOrder1(Node root) {
         int index = -1;
@@ -362,7 +366,9 @@ public class Tree {
     }
 
     /**
-     * @param 后序遍历
+     *  后序遍历 左右中
+     *
+     * @param
      */
     void afterOrder1(Node root) {
         // 标示，
