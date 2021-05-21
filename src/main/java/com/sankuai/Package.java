@@ -3,7 +3,7 @@ package com.sankuai;
 import java.util.Arrays;
 
 /**
- * 0/1背包问题及找零钱问题
+ * 0/1背包问题及找零钱问题  动态规划解决
  * @author zhanglinxing
  * @date 2017年6月6日 下午4:07:25
  */
@@ -74,9 +74,9 @@ public class Package {
 		items[4] = new Item(4, 6);
 		int size = 6;
 		print(selectObject(items, size));
-	//	int arr[] = {1,2,5,10,20,50};
-	//	int[] result = chargeMoney(arr, size);
-	//	System.out.println("result:"+result);
+		int arr[] = {1,2,5,10,20,50};
+		int[] result = chargeMoney(arr, size);
+		System.out.println("result:"+result);
 	
 	}
 

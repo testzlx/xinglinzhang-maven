@@ -371,9 +371,48 @@ public class Graph {
 			System.out.println("<---"+v);
 		}
 	}
-	//todo于20190405
-	private void floyd(){
+	//todo于20190405,
+	int[][] path= new int[7][];
 
+	/**
+	 * 弗洛伊德算法，输入为邻接矩阵;  没有验证
+	 *
+	 * @param A 最终求得两节点之间的最近距离结果集
+	 * @param dist 图的邻接矩阵
+	 * @param vexCount 图的节点个数
+	 */
+	private void floyd(float[][] A,float dist[][],int vexCount){
+		int i,j,k,next,pre,max =10000;
+		for(i =0;i<vexCount;i++)
+			for(j=0;j<vexCount;j++) {
+				if(dist[i][j] != max) {
+					path[i][j] = i+1;
+				} else {
+					path[i][j] = 0;
+				}
+				A[i][j] = dist[i][j];
+			}
+		for(k =0;k< vexCount;k++) {
+			for(i =0;i<vexCount;i++){
+				for(j=0;j<vexCount;j++) {
+					if(A[i][j] > A[i][k]+A[k][j]) {
+						A[i][j] = A[i][k]+A[k][j];
+						path[i][j] = path[k][j];
+					}
+				}
+				}
+		}
+		for(i =0;i<vexCount;i++){
+			for(j=0;j<vexCount;j++) {
+				System.out.printf(A[i][j]+" "+j);
+				pre = path[i][j];
+				while(pre!=0 && pre!=i+1) {
+					System.out.printf("<-"+ (pre-1));
+					pre=path[i][pre-1];
+				}
+				System.out.println("<-"+ i);
+			}
+			}
 	}
 
 	private void toposorta(Node root,int n){

@@ -1,6 +1,12 @@
 package com.sankuai;
 
-import java.util.*;
+
+import com.sankuai.Queue;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 
 /**
  * http://www.tuicool.com/articles/YjyuQ3J
@@ -41,13 +47,216 @@ public class Tree {
         int leftTag, rightTag; // 建立线索二叉树的标志
         Node left;
         Node right;
+        int height;  //应用于AVL树
 
         public Node(char value) {
             this.value = value;
             this.left = null;
             this.right = null;
+            this.height = 1;
         }
     }
+
+    /**
+     *  判断树是否有效二叉搜索树
+     *
+     * @param root
+     * @return
+     */
+    private boolean isValidBST(Node root) {
+        int min = Integer.MIN_VALUE,max = Integer.MAX_VALUE;
+        return helper(root,min,max);
+    }
+
+
+    int preValue = Integer.MIN_VALUE;
+    private boolean isValidBSTV2(Node root) {
+        if (root != null) {
+            boolean l = isValidBSTV2(root.left);
+            if (root.value < preValue) {
+                return false;
+            }
+            preValue = root.value;
+            boolean r = isValidBSTV2(root.right);
+            return l && r;
+        }
+        return true;
+    }
+
+
+
+    private boolean helper(Node root, int min, int max) {
+        if (root == null) {
+            return true;
+        }
+        if (root.value < min || root.value > max) {
+            return false;
+        }
+        return helper(root.left,min,root.value) && helper(root.right,root.value,max);
+    }
+
+
+    //---------------------------------------------------------------------------------------
+
+    //二叉平衡树
+    //-------------------------------------------------------------------
+    private int height(Node node) {
+        if (node ==null) {
+            return 0;
+        }
+        return node.height;
+    }
+
+    private Node llrate(Node node) {
+        Node tmp = node.left;
+        node.left = tmp.right;
+        tmp.right = node;
+        node.height = Math.max(height(node.left),height(node.right)) +1;
+        tmp.height = Math.max(height(tmp.left),height(tmp.right)) +1;
+        return tmp;
+    }
+
+    private Node rrrate(Node node) {
+        Node tmp = node.right;
+        node.right = tmp.left;
+        tmp.left = node;
+        node.height = Math.max(height(node.left),height(node.right)) +1;
+        tmp.height = Math.max(height(tmp.left),height(tmp.right)) +1;
+        return tmp;
+    }
+
+    private Node lrrate(Node node) {
+        node.left = rrrate(node.left);
+        return llrate(node);
+    }
+
+    private Node rlrate(Node node) {
+        node.right = llrate(node.right);
+        return rrrate(node);
+    }
+
+    private void insert(char val) {
+        root = insert(root,val);
+    }
+
+    private Node insert(Node node,char val) {
+        if(node == null) {
+            return  new Node(val);
+        }
+        if (val > node.value) {
+            node.right = insert(node.right,val);
+            if(height(node.right) - height(node.left) ==2) {
+                if(val > node.right.value) {
+                    node = rrrate(node);
+                } else {
+                    node = rlrate(node);
+                }
+            }
+        } else if(val < node.value) {
+            node.left = insert(node.left,val);
+            if(height(node.left) - height(node.right) ==2) {
+                if(val < node.left.value) {
+                    node = llrate(node);
+                } else {
+                    node = lrrate(node);
+                }
+            }
+        } else {
+            System.out.printf(val + " existed!");
+        }
+        node.height = Math.max(height(node.left),height(node.right)) +1;
+        return node;
+    }
+
+    //删除很复杂，没看懂
+    private void remove(char ch) {
+        Node z;
+        if((z = search(root,ch)) != null) {
+             root = remove(root,z);
+        }
+    }
+
+    private Node search(Node node,char ch) {
+        if(node == null) {
+            return null;
+        }
+        while(node != null) {
+            if (ch == node.value) {
+                return node;
+            } else if (node.value > ch) {
+                node = node.left;
+            }else {
+                node = node.right;
+            }
+        }
+        return null;
+    }
+
+    private Node remove(Node node, Node z) {
+        if (node == null || z == null) {
+            return null;
+        }
+        if (z.value > node.value) {
+            node.right = remove(node.right,z);
+            if (height(node.left) - height(node.right) ==2) {
+                Node leftNode = node.left;
+                if (height(leftNode.left) > height(leftNode.right)) {
+                    node = llrate(node);
+                } else {
+                    node = lrrate(node);
+                }
+            }
+        } else if (z.value < node.value) {
+            node.left = remove(node.left,z);
+            if (height(node.right) -height(node.left) ==2) {
+                Node rightNode = node.right;
+                if (height(rightNode.right) > height(rightNode.left)) {
+                    node = rrrate(node);
+                }else  {
+                    node = rlrate(node);
+                }
+            }
+        } else {
+            if (node.left != null && node.right != null) {
+               if (height(node.left) > height(node.right)) {
+                   Node max = maxNode(node.left);
+                   node.value = max.value;
+                   node.left = remove(node.left,max);
+               } else {
+                   Node min = minNode(node.right);
+                   node.value = min.value;
+                   node.right = remove(node.right,min);
+               }
+            } else {
+                node = node.left != null ? node.left : node.right;
+            }
+
+        }
+        if(node != null) {
+            node.height = Math.max(height(node.left), height(node.right)) + 1;
+        }
+        return node;
+    }
+
+    private Node maxNode(Node node) {
+        Node pre = node;
+        while (node != null) {
+            pre = node;
+            node = node.right;
+        }
+        return pre;
+    }
+
+    private Node minNode(Node node) {
+        Node pre = node;
+        while (node != null) {
+            pre = node;
+            node = node.left;
+        }
+        return pre;
+    }
+
+    //-------------------------------------------------------------------------
 
     /*
      * class Linknode{ char value; Linknode next; public Linknode(char ch){
@@ -90,12 +299,6 @@ public class Tree {
             }
         }
     }
-
-    void test(Tree tree) {
-        tree.root = new Node('f');
-
-    }
-
 
     //leetcode  https://leetcode.com/problems/maximum-binary-tree/
     public Node constructMaximumBinaryTree(char[] nums) {
@@ -167,7 +370,7 @@ public class Tree {
 
     /*****************************************************************************/
     /**
-     * 中序 非递归遍历
+     * 先序 非递归遍历
      */
 
     void midOrder1(Node root) {
@@ -186,7 +389,7 @@ public class Tree {
     }
 
     /**
-     * @param 先序遍历
+     * @param 中序遍历
      */
     void preOrder1(Node root) {
         int index = -1;
@@ -606,6 +809,18 @@ public class Tree {
         return sum;
     }
 
+    public Node findParentV2(Node root,Node node1,Node node2) {
+        if (root == null || root.value == node1.value || root.value ==node2.value) {
+            return root;
+        }
+        Node left = findParentV2(root.left,node1,node2);
+        Node right = findParentV2(root.right,node1,node2);
+        if (left != null && right != null) {
+            return root;
+        }
+        return left == null ? right:left;
+    }
+
     char[] longestPath;
     char[] tmpPath = new char[30];
     int longestDepth = 0;
@@ -656,8 +871,6 @@ public class Tree {
     /**
      * 二叉排序树的插入
      *
-     * @param root 根节点
-     * @param char 插入数值
      */
     private void sortInsert(char value) {
         Node tmp = new Node(value), pre, curent;
@@ -699,8 +912,6 @@ public class Tree {
     /**
      * 删除二叉排序树其中一节点
      *
-     * @param args
-     * @throws Exception
      */
     private void sortDelete(char value) {
         Node parent = root, curent = root;
@@ -723,7 +934,7 @@ public class Tree {
             return;
         }
         if (curent.left == null) {
-            if (parent == root) {
+            if (curent == root) {
                 root = curent.right;
                 return;
             }
@@ -744,15 +955,33 @@ public class Tree {
                 f.right = t.left;
             }
             curent.value = t.value;
-            t = null;
         }
     }
 
     public static void main(String[] args) throws Exception {
         Tree tree = new Tree();
+        //二叉平衡树相关操作
+        tree.insert('3');
+        tree.insert('2');
+        tree.insert('1');
+        tree.insert('4');
+        tree.insert('5');
+        tree.insert('7');
+        tree.insert('9');
+        tree.insert('0');
+        tree.insert('8');
+        System.out.println(tree.root.value);
+        tree.remove('2');
+        tree.remove('0');
+        tree.remove('3');
+        System.out.println(tree.root.value);
+
+
+        /*
         char[] chars = {'d', 'c', 'b', 'g', 'a', 'f'};
         Node node = tree.constructMaximumBinaryTree(chars);
         System.out.println("node:" + node);
+         */
         /*
          tree.root = tree.createTree();
         tree.longPath(tree.root);
