@@ -1,8 +1,11 @@
 package com.sankuai.slicewindow;
 
+/**
+ *  没看懂
+ */
 public class Leetcode_zh_76 {
     public static void main(String[] args) {
-        String str = "abdabbcd";
+        String str = "abdabbcdabc";
         String target = "abc";
         System.out.println(minWindow(str,target));
     }
