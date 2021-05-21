@@ -1,4 +1,4 @@
-package com.sankuai.recursion;
+package com.sankuai.backtrace;
 
 //排列问题求解
 public class Perm {
