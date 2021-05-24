@@ -159,6 +159,17 @@ public class TrieTree {
 					+ entry.getValue());
 		}
 
+		//------------------------------------------第二种写法的测试-------------------
+		t = new TrieTree();
+		t.insert("abc");
+		t.insert("ab");
+		t.insert("abg");
+		t.insert("acg");
+		t.delete("ab");
+		t.delete("abcd");
+		System.out.println("----------------result--------------");
+		t.prefixSearchV2("ab");
+		System.out.println(t);
 	}
 
 	class Node {
@@ -175,5 +186,82 @@ public class TrieTree {
 			this.indexOut = paramInteger;
 		}
 	}
+	//-------------------------------------前缀树第二种简单的实现-------------
+
+	class TrieNode {
+		boolean isEnd;
+		//根据业务需要可以添加其它属性
+		Map<Character,TrieNode> children = new HashMap<>();
+	}
+
+	private TrieNode headV2 = new TrieNode();
+
+	public boolean insert(String str) {
+		if (str == null || str.isEmpty()) {
+			return false;
+		}
+		TrieNode curr = headV2;
+		for (int i = 0 ;i < str.length();i++) {
+			char ch = str.charAt(i);
+			if (!curr.children.containsKey(ch)) {
+				curr.children.put(ch,new TrieNode());
+			}
+			curr = curr.children.get(ch);
+		}
+		if(curr.isEnd) {
+			System.out.println(str + " exists!!");
+			return false;
+		}
+		curr.isEnd = true;
+		return true;
+	}
+
+	public boolean delete(String str) {
+		if (str == null || str.isEmpty()) {
+			return true;
+
+		}
+		TrieNode curr = headV2;
+		for (int i = 0 ;i < str.length();i++) {
+			char ch = str.charAt(i);
+			if (!curr.children.containsKey(ch)) {
+				System.out.println(str + " can not find!!");
+				return false;
+			}
+			curr = curr.children.get(ch);
+		}
+		curr.isEnd = false;
+		return true;
+	}
+
+	public TrieNode findNodeV2(String str) {
+		TrieNode curr = headV2;
+		for (int i = 0 ;i < str.length();i++) {
+			char ch = str.charAt(i);
+			if (!curr.children.containsKey(ch)) {
+				System.out.println(str + " can not find!!");
+				return null;
+			}
+			curr = curr.children.get(ch);
+		}
+		return curr;
+	}
+
+	public void prefixSearchV2(String str) {
+		TrieNode node = findNodeV2(str);
+		recruit(node,str);
+	}
+
+	private void recruit(TrieNode node, String str) {
+		if (node != null) {
+			if (node.isEnd) {
+				System.out.println(str);
+			}
+			for (Map.Entry<Character,TrieNode> entry:node.children.entrySet()) {
+				recruit(entry.getValue(),str + entry.getKey());
+			}
+		}
+	}
+
 
 }
