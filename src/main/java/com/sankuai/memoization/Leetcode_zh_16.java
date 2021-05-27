@@ -2,6 +2,10 @@ package com.sankuai.memoization;
 
 import java.util.*;
 
+/**
+ * 这个实现不是记忆化实现
+ *
+ */
 public class Leetcode_zh_16 {
 
     public static void main(String[] args) {

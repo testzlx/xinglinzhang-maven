@@ -358,6 +358,13 @@ public class Tree {
         }
     }
 
+    int nodeSum(Node root) {
+        if (root != null) {
+            return root.value + nodeSum(root.left) + nodeSum(root.right);
+        }
+        return 0;
+    }
+
     /**
      *  后序遍历
      * @param
