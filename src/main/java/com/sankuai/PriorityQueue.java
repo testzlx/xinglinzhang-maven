@@ -146,5 +146,27 @@ public abstract class PriorityQueue<T> {
             }
         }
         heap[i] = node;				  // install saved node
+
+    }
+    public static void main(String[] args) {
+        MyPriorityQueue queue = new MyPriorityQueue();
+        queue.initialize(4);
+        int[] arr = {2,6,1,5,8,3,4,1,2,5};
+        for(int tmp : arr) {
+            queue.insert(tmp);
+        }
+        System.out.println(queue.pop());
+    }
+
+    static class MyPriorityQueue extends  PriorityQueue<Integer> {
+
+        @Override
+        protected boolean lessThan(Object a, Object b) {
+            int aInt = (int) a;
+            int bInt = (int)b;
+            return aInt > bInt;
+        }
+
+
     }
 }

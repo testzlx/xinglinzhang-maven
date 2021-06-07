@@ -1,13 +1,13 @@
 package com.sankuai.queue;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class LeetCode_zh_621 {
     public static void main(String[] args) {
         char[] tasks = {'A','A','A','B','B','B'};
         System.out.println(leastInterval(tasks,2));
+        int[] arr = {3,5,2,6};
+        System.out.println(Arrays.toString( mostCompetitive(arr,2)));
 
     }
 
@@ -15,7 +15,7 @@ public class LeetCode_zh_621 {
         int maxExec = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (char ch : tasks) {
-            int count = map.putIfAbsent(ch, 0);
+            int count = map.getOrDefault(ch, 0);
             map.put(ch, ++count);
             maxExec = Math.max(maxExec, count);
         }
@@ -30,6 +30,30 @@ public class LeetCode_zh_621 {
         }
 
         return Math.max((maxExec - 1) * (n + 1) + maxCount, tasks.length);
+    }
 
+    /**
+     *  1673
+     * @param nums
+     * @param k
+     * @return
+     */
+    public static int[] mostCompetitive(int[] nums, int k) {
+        Stack<Integer> stack = new Stack<>();
+        for(int i = 0;i <nums.length;i++) {
+            while(!stack.isEmpty()
+                    && stack.peek() > nums[i]
+                    && k - stack.size() <= nums.length - i -1) {
+                stack.pop();
+            }
+            if (stack.size() < k) {
+                stack.push(nums[i]);
+            }
+        }
+        int[] res = new int [k];
+        for(int i = k -1;i>=0;i--) {
+            res[i] = stack.pop();
+        }
+        return res;
     }
 }
