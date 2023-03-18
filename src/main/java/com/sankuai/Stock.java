@@ -36,7 +36,7 @@ public class Stock {
 	//https://www.jianshu.com/p/611eb202be1e
 	private static int serialSum(int nums[]){
 		int start = 0,end = 0;
-		int local[] = {2,-1,3,4,-50,-7,-6};
+		int local[] = {2,-1,3,4,-50,-7,-6,10};
 		int maxSum  =  local[0],sum = local[0];
 		for(int i =1; i<local.length ;i++){
 			sum += local[i];

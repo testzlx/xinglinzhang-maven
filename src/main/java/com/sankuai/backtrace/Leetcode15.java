@@ -1,8 +1,7 @@
-package com.sankuai.leetcode;
+package com.sankuai.backtrace;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class Leetcode15 {
@@ -10,7 +9,11 @@ public class Leetcode15 {
     public static void main(String[] args) {
         Leetcode15 leetcode15  = new Leetcode15();
         int[] nums =  {-1,0,1,2,-1,-4};
-        leetcode15.threeSum(nums);
+        List<List<Integer>> results =leetcode15.threeSum(nums);
+        for(List<Integer> pair:results){
+            System.out.println(Arrays.toString(pair.toArray()));
+        }
+
     }
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();

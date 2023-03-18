@@ -64,7 +64,7 @@ public class Sort {
 		// int index;
 		if (low < high) {
 			int index = findIndex(arr, low, high);
-			//第二种  int index = findIndex2(arr, low, high);
+			// int index = findIndex2(arr, low, high);//第二种
 			//第三种 int index = findIndex3(arr, low, high);
 			//第四种 int index = findIndex(arr, low, high);
 			quickSort(arr, low, index - 1);
@@ -99,10 +99,10 @@ public class Sort {
 			while(arr[p] < tmp && p<=q){
 				p++;
 			}
-			while(arr[p] > tmp && p<=q){
+			while(arr[q] >= tmp && p<=q){
 				q--;
 			}
-			if(p <=q) {
+			if(p <q) {
 				swap(arr, p, q);
 			}
 		}
@@ -124,6 +124,9 @@ public class Sort {
 	}
 
 	private void swap(int[] arr,int i,int j){
+		if(i==j){
+			return;
+		}
 		arr[i] = arr[i] + arr[j];
 		arr[j] = arr[i] - arr[j];
 		arr[i] = arr[i] - arr[j];
@@ -440,7 +443,8 @@ public class Sort {
 		sort.mergeSortMain();
 		sort.heapSortMain();
 		*/
-		sort.jishuSort();
+		//sort.jishuSort();
+		sort.quickSortMain();
 		//sort.middleFindMain(20);
 	}
 

@@ -4,6 +4,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import java.util.*;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * Unit test for simple App.
  */
@@ -16,5 +21,82 @@ public class AppTest
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
+    }
+
+    @Test
+    public void testArraySort(){
+        Integer[] arr = {-2,3,-6,6,9};
+        Arrays.sort(arr,(a,b)->b-a);
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    @Test
+    public void listTest(){
+        Queue<List<Integer>> aa = new LinkedList<List<Integer>>();
+        aa.add(Arrays.asList(1,2,3,4));
+        aa.add(Arrays.asList(1,3));
+        aa.add(Arrays.asList(1,3));
+        System.out.println(Arrays.toString(aa.peek().toArray()));
+        System.out.println(aa.size());
+        System.out.println(aa.poll());
+        System.out.println(aa.size());
+        List<Integer> list = new LinkedList<Integer>();
+        List<Integer> bb = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(13);
+
+    }
+
+    @Test
+    public void setTest(){
+        Set<Integer> set = new HashSet<Integer>();
+        set.add(1);
+        set.add(2);
+        System.out.println(set.contains(1));
+        for(Iterator<Integer> it = set.iterator();it.hasNext();){
+            System.out.println(it.next());
+        }
+        System.out.println(-1&15);
+
+    }
+
+    @Test
+    public void mapTest(){
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(1,2);
+        map.put(2,3);
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+    }
+
+    @Test
+    public void queueTest(){
+        Deque<Integer> a = new ArrayDeque<Integer>();
+        a.addFirst(1);
+        a.addFirst(2);
+        a.addLast(3);
+        System.out.println(a.pollFirst());
+        System.out.println(a.pollFirst());
+        System.out.println(a.pollFirst());
+
+
+    }
+
+    @Test
+    public void testPriorityQueue(){
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>();
+        priorityQueue.add(4);
+        priorityQueue.add(42);
+        priorityQueue.add(1);
+        priorityQueue.add(7);
+        priorityQueue.add(5);
+        priorityQueue.add(4);
+        while(!priorityQueue.isEmpty()){
+            System.out.println(priorityQueue.poll());
+        }
+
     }
 }

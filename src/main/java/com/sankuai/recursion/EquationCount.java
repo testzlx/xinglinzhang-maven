@@ -17,6 +17,6 @@ public class EquationCount {
    }
 
     public static void main(String[] args) {
-        System.out.println(count(6,4));
+        System.out.println(count(6,3));
     }
 }
