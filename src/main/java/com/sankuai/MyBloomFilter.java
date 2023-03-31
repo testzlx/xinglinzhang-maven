@@ -34,10 +34,10 @@ public class MyBloomFilter {
        }
 
        public int myHash(String str) {
-           int len = str.length();
+           int alen = str.length();
            int result = 0;
            //这的len就是str的len，不是成员变量的len
-           for (int i = 0; i < len; i++) {
+           for (int i = 0; i < alen; i++) {
                //System.out.println(seed+"oooooooooooo");
                result = result * seed + str.charAt(i);
                //System.out.println(result);

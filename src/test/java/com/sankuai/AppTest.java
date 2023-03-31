@@ -99,4 +99,31 @@ public class AppTest
         }
 
     }
+
+
+    static int count=0;
+
+    @Test
+    public  void testLocalClass() throws InterruptedException {
+        System.out.println(0);
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(123);
+                count = 10;
+            }
+        };
+        Thread t =  new Thread(runnable);
+        //设置demon线程，主线程退出，demon线程也会退出
+        //t.setDaemon(true);
+        t.start();
+        //t.join();
+        System.out.println(456);
+        System.out.println("count=" +count);
+    }
 }

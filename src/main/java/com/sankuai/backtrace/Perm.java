@@ -15,7 +15,7 @@ public class Perm {
             }
             System.out.println(arr[m]);
         }else{
-            for(int i=k;i<=m;i++){
+            for(int i=k;i<=arr.length-1;i++){
                 swap(arr,i,k);
                 permSolution(arr,k+1,m);
                 swap(arr,i,k);
@@ -25,7 +25,7 @@ public class Perm {
 
     public static void main(String[] args) {
         int[] arr = {0,1,2,3};
-        permSolution(arr,0,3);
+        permSolution(arr,0,2);
 
     }
 }

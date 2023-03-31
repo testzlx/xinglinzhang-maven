@@ -7,9 +7,6 @@ public class Main1 {
 
     public static void main(String[] args) {
 
-        int num[] = {2,3,1,1,4};
-        boolean canJump =canJump(num);
-        System.out.println("can jump: "+canJump);
 
     }
 
@@ -39,16 +36,6 @@ public class Main1 {
         helper(chars,pos+1,lists);
     }
 
-    //跳格子游戏  是否可以跳到终点  LeetCode55
-    public  static boolean canJump(int[] nums) {
-        int dis = 0;
-        for (int i = 0; i <= dis; i++) {
-            dis = Math.max(dis, i + nums[i]);
-            if (dis >= nums.length-1) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 
 }

@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.dp;
 
 import java.util.Arrays;
 
@@ -38,7 +38,6 @@ public class Package {
 	} 
 	 /**
 	  * 找零钱问题
-	  * @param args
 	  * 返回的值数组是 、数组下标是要找的前，值是选择的零钱元素的个数
 	  * 个人理解：既有动态规划也有贪心算法思想（先找最大钱）
 	  */
@@ -76,7 +75,7 @@ public class Package {
 		print(selectObject(items, size));
 		int arr[] = {1,2,5,10,20,50};
 		int[] result = chargeMoney(arr, size);
-		System.out.println("result:"+result);
+		System.out.println("result:"+Arrays.toString(result));
 	
 	}
 

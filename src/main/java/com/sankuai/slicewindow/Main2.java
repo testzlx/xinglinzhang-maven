@@ -1,11 +1,7 @@
-package com.visualbusiness.my_test;
+package com.sankuai.slicewindow;
 
 
-import com.sun.java.swing.plaf.windows.WindowsDesktopIconUI;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Main2 {

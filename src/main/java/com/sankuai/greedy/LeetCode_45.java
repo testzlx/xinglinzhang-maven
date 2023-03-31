@@ -52,4 +52,16 @@ public class LeetCode_45 {
         }
         return flag ==0;
     }
+
+    //跳格子游戏  是否可以跳到终点  LeetCode55
+    public  static boolean canJumpV3(int[] nums) {
+        int dis = 0;
+        for (int i = 0; i <= dis; i++) {
+            dis = Math.max(dis, i + nums[i]);
+            if (dis >= nums.length-1) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

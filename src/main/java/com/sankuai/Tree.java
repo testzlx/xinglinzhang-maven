@@ -3,9 +3,7 @@ package com.sankuai;
 
 import com.sankuai.Queue;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -754,6 +752,93 @@ public class Tree {
         }
     }
 
+    //二叉树的层次打印
+    private List<List<Character>> levelPrint(Node root){
+        if(root== null){
+            return new ArrayList<>();
+        }
+        List<List<Character>> ret = new ArrayList<List<Character>>();
+        java.util.Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            List<Character> eles = new LinkedList<Character>();
+            List<Node> tmp = new LinkedList<Node>();
+            while (!queue.isEmpty()){
+                Node node = queue.poll();
+                eles.add(node.value);
+                tmp.add(node);
+            }
+            ret.add(eles);
+            for (Node node:tmp){
+                if (node.left != null){
+                    queue.add(node.left);
+                }
+                if (node.right != null){
+                    queue.add(node.right);
+                }
+            }
+        }
+        return ret;
+
+    }
+
+    private List<Character> largestValues = new ArrayList<Character>();
+    //二叉树每层最大值
+    private List<Character> largestValues(Node root){
+        dfs(root,0);
+        return largestValues;
+    }
+
+    private void dfs(Node root,int depth){
+            if (root != null) {
+                if (largestValues.size() <= depth) {
+                    largestValues.add(Character.MIN_VALUE);
+                }
+                Character tmp = largestValues.get(depth);
+                Character max_ch = tmp > root.value ? tmp : root.value;
+                largestValues.set(depth,max_ch);
+                dfs(root.left,depth+1);
+                dfs(root.right,depth+1);
+            }
+    }
+
+    private Map<Node,Integer> depthMap= new HashMap<>();
+    //leetcode  1123
+    private Node lcaDeepestLeaves(Node root){
+        depth(root);
+        return dfsLeaves(root);
+    }
+
+    private Node dfsLeaves(Node root){
+        int left = depth(root.left);
+        int right = depth(root.right);
+        if (left == right){
+            return root;
+        }else  if(left > right){
+            return dfsLeaves(root.left);
+        }else {
+            return dfsLeaves(root.right);
+        }
+
+    }
+
+    private int depth(Node root){
+        if (root == null){
+            return 0;
+        }
+        if(depthMap.containsKey(root)){
+            return depthMap.get(root);
+        }
+        int leftDepth = depth(root.left);
+        int rightDepth = depth(root.right);
+        int parentDepth = Math.max(leftDepth,rightDepth) +1;
+        depthMap.put(root,parentDepth);
+        return parentDepth;
+    }
+
+
+
+
     //判断两个树是否相等
     public boolean isTheSame(Node node1, Node node2) {
         if (node1 == null && node2 == null) {
@@ -973,6 +1058,7 @@ public class Tree {
 
     public static void main(String[] args) throws Exception {
         Tree tree = new Tree();
+        /*
         //二叉平衡树相关操作
         tree.insert('3');
         tree.insert('2');
@@ -988,15 +1074,17 @@ public class Tree {
         tree.remove('0');
         tree.remove('3');
         System.out.println(tree.root.value);
-
+        */
 
         /*
         char[] chars = {'d', 'c', 'b', 'g', 'a', 'f'};
         Node node = tree.constructMaximumBinaryTree(chars);
         System.out.println("node:" + node);
          */
+
+        tree.root = tree.createTree();
+        List<List<Character>> ret = tree.levelPrint(tree.root);
         /*
-         tree.root = tree.createTree();
         tree.longPath(tree.root);
         System.out.println(tree.longestPath);
         */

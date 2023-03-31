@@ -12,13 +12,12 @@ public class Main {
         System.out.println( main.getKthMagicNumber(7));
         int[] arr ={1,2,3,2};
         System.out.println(main.maxSumMinProduct(arr));
+
+        List<String> letters =  letterCasePermutation2("abc");
+        System.out.println("letter:"+letters);
     }
 
     //有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21
-    //
-    //来源：力扣（LeetCode）
-    //链接：https://leetcode-cn.com/problems/get-kth-magic-number-lcci
-    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     public int getKthMagicNumber(int k) {
         int[] arr = new int[k+1];
         arr[0] =1;
@@ -97,6 +96,31 @@ public class Main {
             best = Math.max(best, (sum[right[i] + 1] - sum[left[i]]) * nums[i]);
         }
         return (int)best%10000000;
+    }
+
+
+    //把一字符串变换大小写并把所有情况输出(好聪明啊，队列中不会重复元素)
+    //广度遍历
+    private static List<String> letterCasePermutation2(String s){
+        Queue<String> queue  = new LinkedList<String>();
+        queue.offer(s);
+        for(int i =0 ;i<s.length();i++){
+            if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
+                continue;
+            }
+            int size = queue.size();
+            for(int j = 0;j< size;j++){
+                String cur =   queue.poll();
+                char[] chs = cur.toCharArray();
+
+                chs[i] = Character.toUpperCase(chs[i]);
+                queue.offer(String.valueOf(chs));
+
+                chs[i] = Character.toLowerCase(chs[i]);
+                queue.offer(String.valueOf(chs));
+            }
+        }
+        return new ArrayList<>(queue);
     }
 
 

@@ -1,6 +1,7 @@
 package com.sankuai;
 
 import java.lang.reflect.Array;
+import java.util.LinkedList;
 
 public class Stack<T> {
     private int top  = -1;T[] arr;
@@ -20,6 +21,39 @@ public class Stack<T> {
         if(!isFull()) {
             arr[++top] = t;
         }
+    }
+
+    //leetcode-225  用双队列实现栈的功能
+    static class TwoQueue{
+        java.util.Queue<Integer> a,b;
+
+        public TwoQueue(){
+             a = new LinkedList();
+             b = new LinkedList();
+        }
+
+        public void push(int x) {
+            a.offer(x);
+            while(!b.isEmpty()){
+                a.offer(b.poll());
+            }
+            java.util.Queue<Integer> tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+        public int pop() {
+            return b.poll();
+        }
+
+        public int top() {
+            return b.peek();
+        }
+
+        public boolean empty() {
+            return b.size()  == 0;
+        }
+
     }
 
     public boolean isEmpty(){
@@ -165,6 +199,15 @@ public class Stack<T> {
         System.out.println(shareStack.rpop());
         System.out.println(shareStack.rpop());
         System.out.println(shareStack.rpop());
+        System.out.println("----------------#############-----------------");
+        Stack.TwoQueue twoQueue = new Stack.TwoQueue();
+        twoQueue.push(1);
+        twoQueue.push(2);
+        twoQueue.push(3);
+        twoQueue.push(4);
+        while(!twoQueue.empty()){
+            System.out.println(twoQueue.pop());
+        }
 
     }
 }

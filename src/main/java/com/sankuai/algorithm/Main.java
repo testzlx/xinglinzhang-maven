@@ -10,8 +10,7 @@ public class Main {
         double result = findMedianSortedArrays(a, b);
         System.out.println("result:" + result);
 
-        List<String> letters =  letterCasePermutation2("abc");
-        System.out.println("letter:"+letters);
+
         char[] chars = {'C','C','C','D','D','D'};
         int count = leastInterval(chars,2);
         System.out.println("leastInterval , count: "+ count);
@@ -104,32 +103,10 @@ public class Main {
         return max;
     }
 
-    //把一字符串变换大小写并把所有情况输出(好聪明啊，队列中不会重复元素)
-    //广度遍历
-    private static List<String> letterCasePermutation2(String s){
-        Queue<String> queue  = new LinkedList<String>();
-        queue.offer(s);
-        for(int i =0 ;i<s.length();i++){
-            if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
-                continue;
-            }
-            int size = queue.size();
-            for(int j = 0;j< size;j++){
-                String cur =   queue.poll();
-                char[] chs = cur.toCharArray();
-
-                chs[i] = Character.toUpperCase(chs[i]);
-                queue.offer(String.valueOf(chs));
-
-                chs[i] = Character.toLowerCase(chs[i]);
-                queue.offer(String.valueOf(chs));
-            }
-        }
-        return new ArrayList<>(queue);
-    }
 
 
-    //https://leetcode.com/problems/task-scheduler/
+
+    //leetcode_cn_621 任务调度
     //
     public static  int leastInterval(char[] tasks, int n) {
         int[] map = new int[26];
@@ -144,31 +121,19 @@ public class Main {
     }
 
 
-
-
-    //贪心算法  nb 跳格子游戏
-    public static  boolean canJump2(int[] nums) {
-        int lastPos = nums.length - 1;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (i + nums[i] >= lastPos) {
-                lastPos = i;
+    //贪心算法  小孩子分蛋糕问题求解 leetcode_cn_455
+    private static  int assignCookies(int[] children,int[] cookies){
+        Arrays.sort(children);
+        Arrays.sort(cookies);
+        int i ,j;
+        for(i=0,j=0;i<children.length && j < cookies.length; j++ ){
+            if(children[i] <= cookies[j]){
+                i++;
             }
         }
-        return lastPos == 0;
+        return i;
+
     }
 
-    //贪心算法  小孩子分蛋糕问题求解 https://leetcode.com/problems/assign-cookies/
-     private static  int assignCookies(int[] children,int[] cookies){
-         Arrays.sort(children);
-         Arrays.sort(cookies);
-         int i ,j;
-         for(i=0,j=0;i<children.length && j < cookies.length; j++ ){
-             if(children[i] <= cookies[j]){
-                 i++;
-             }
-         }
-         return i;
-
-     }
 
 }

@@ -1,6 +1,7 @@
 package com.sankuai;
 
 import java.lang.reflect.Array;
+import java.util.Stack;
 
 public class Queue<T> {
 
@@ -82,6 +83,43 @@ public class Queue<T> {
         }
         public boolean isFull(){
             return (rear+1)%arrs.length == front;
+        }
+    }
+
+
+    //leetcode232 两个栈组成一个队列
+    static class TwoStack{
+        java.util.Stack<Integer> a,b;
+        public TwoStack() {
+            a = new Stack<Integer>();
+            b = new Stack<Integer>();
+        }
+
+        public void push(int x) {
+            a.push(x);
+        }
+
+        public int pop() {
+            if(b.isEmpty()){
+                while(!a.isEmpty()){
+                    b.push(a.pop());
+                }
+            }
+            return b.pop();
+        }
+
+        public int peek() {
+            if(b.isEmpty()){
+                while(!a.isEmpty()){
+                    b.push(a.pop());
+                }
+            }
+            return b.peek();
+        }
+
+        public boolean empty() {
+            return a.isEmpty() && b.isEmpty();
+
         }
     }
 
