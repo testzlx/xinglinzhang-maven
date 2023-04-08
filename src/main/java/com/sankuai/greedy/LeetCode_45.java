@@ -1,5 +1,7 @@
 package com.sankuai.greedy;
 
+import java.util.Arrays;
+
 public class LeetCode_45 {
     public static void main(String[] args) {
         int[] nums = {2,3,1,1,4};
@@ -63,5 +65,19 @@ public class LeetCode_45 {
             }
         }
         return false;
+    }
+
+    //贪心算法  小孩子分蛋糕问题求解 leetcode_cn_455
+    private static  int assignCookies(int[] children,int[] cookies){
+        Arrays.sort(children);
+        Arrays.sort(cookies);
+        int i ,j;
+        for(i=0,j=0;i<children.length && j < cookies.length; j++ ){
+            if(children[i] <= cookies[j]){
+                i++;
+            }
+        }
+        return i;
+
     }
 }

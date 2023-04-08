@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.backtrace;
 
 /**
  * 在一个大小为n的数组中，求出其中m个数之和为s的组合
@@ -7,7 +7,6 @@ package com.sankuai;
  */
 public class ArraySum {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int n =9,m=3,s=13;
 		int[] b= new int[m];
 		int[] arrs = {1,2,3,4,5,6,7,8,9}; 

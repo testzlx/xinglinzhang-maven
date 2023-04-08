@@ -6,6 +6,8 @@ public class Main {
         System.out.println(longestPalindrome("babad"));
         int commonCount = lcs("cnblogs","belong");
         System.out.println("lcs commonCount:" + commonCount);
+        boolean isMatch = isMatch("abc","a*");
+        System.out.println("isMatch:" +isMatch);
     }
     //找出字符串最大回文子串https://leetcode.com/problems/longest-palindromic-substring/  动态规划思想
     public  static String longestPalindrome(String s) {
@@ -91,5 +93,36 @@ public class Main {
             }
         }
         return result;
+    }
+
+
+    //leetcode_cn 44 字符串通配符匹配
+    public static boolean isMatch(String s, String p) {
+        int slen = s.length();
+        int plen = p.length();
+        int i=0,j=0,start = -1,match=0;
+        while(i < slen){
+            if (j < plen && ((p.charAt(j)) == '?' || s.charAt(i) ==p.charAt(j) )){
+                j++;
+                i++;
+            }else if (j < plen && p.charAt(j) == '*'){
+                match = j;
+                start = i;
+                j++;
+            }else  if(start !=-1){
+                i= ++ start;
+                j =match+1;
+            }else {
+                return false;
+            }
+        }
+        while(j<plen){
+            if(p.charAt(j) != '*'){
+                return false;
+            }
+            j++;
+        }
+        return true;
+
     }
 }

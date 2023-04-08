@@ -66,6 +66,25 @@ public class Tree {
         return helper(root,min,max);
     }
 
+    // 这种写法错误，只是比较了当前节点及其自节点的大小关系，没有比较整体
+    private boolean error_isValidBST(Node root) {
+        if (root == null){
+            return true;
+        }
+        boolean leftFlag = true,rightFlag = true;
+        if (root.left == null ||root.left.value < root.value) {
+            leftFlag = error_isValidBST(root.left);
+        }else {
+            return false;
+        }
+        if (root.right == null ||root.right.value > root.value) {
+            rightFlag = error_isValidBST(root.right);
+        }else {
+            return false;
+        }
+        return leftFlag && rightFlag;
+    }
+
 
     int preValue = Integer.MIN_VALUE;
     private boolean isValidBSTV2(Node root) {
@@ -854,6 +873,26 @@ public class Tree {
             return false;
         }
     }
+
+
+    //leetcode_101
+    public boolean isSymmetric(Node root) {
+        if (root == null){
+            return true;
+        }
+        return cmp(root.left,root.right);
+    }
+
+    private boolean cmp(Node leftNode, Node rightNode) {
+        if (leftNode == null && rightNode == null){
+            return true;
+        }
+        if (leftNode == null || rightNode == null || leftNode.value != rightNode.value){
+            return false;
+        }
+        return cmp(leftNode.left,rightNode.right) && cmp(leftNode.right,rightNode.left);
+    }
+
 
     /**
      * 二叉树逆向

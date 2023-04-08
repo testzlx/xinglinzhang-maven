@@ -68,7 +68,7 @@ public class Leetcode_zn_2251 {
     public static void main(String[] args) {
         int[][] flowers = {{1, 7}, {2, 8}, {3, 9}, {4, 10}};
         int[] persons = {5};
-        int[] result = fullBloomFlowers(flowers, persons);
+        int[] result = fullBloomFlowers_v2(flowers, persons);
         System.out.println(Arrays.toString(result));
 
     }

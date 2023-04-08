@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.*;
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.Stack;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Unit test for simple App.
@@ -98,6 +98,38 @@ public class AppTest
             System.out.println(priorityQueue.poll());
         }
 
+    }
+
+    @Test
+    public void strTest(){
+        String a = "abcd";
+        System.out.println(a.substring(0,a.length()-1));
+    }
+
+    @Test
+    public void completedFutureTest(){
+        CompletableFuture<String> root = new CompletableFuture<>();
+        root.thenApply(s->{
+            System.out.println("3");return "3";});
+        root.thenApply(s->{
+            System.out.println("6");return "6";});
+        root.thenApply(s->{
+            System.out.println("9");return "9";});
+        root.complete("1");
+
+        System.out.println("=============================");
+        CompletableFuture<String> root1 = new CompletableFuture<>();
+        root1.thenApply(s->{return "2";});
+        CompletableFuture bcf=root1.thenApply(s->{return "7";});
+        root1.thenApply(s->{return "4";});
+
+        bcf.thenApply(s->{
+            System.out.println("3");return "3";});
+        bcf.thenApply(s->{
+            System.out.println("6");return "6";});
+        bcf.thenApply(s->{
+            System.out.println("9");return "9";});
+        root1.complete("1");
     }
 
 

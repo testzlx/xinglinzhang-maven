@@ -71,7 +71,7 @@ public class Main {
 
 
     //走迷宫，上下左右可以走，同序（顺序，逆序）最大的路径(个人感觉：回溯法 && 动态规划)
-    // https://leetcode.com/problems/longest-increasing-path-in-a-matrix/discuss/78308/15ms-Concise-Java-Solution
+    // leetcode_cn_329
 
     static  int dirs[][] = {{0,1},{0,-1},{-1,0},{1,0}};
     private  static int longestIncreasingPath(int[][] matrix){
@@ -121,19 +121,7 @@ public class Main {
     }
 
 
-    //贪心算法  小孩子分蛋糕问题求解 leetcode_cn_455
-    private static  int assignCookies(int[] children,int[] cookies){
-        Arrays.sort(children);
-        Arrays.sort(cookies);
-        int i ,j;
-        for(i=0,j=0;i<children.length && j < cookies.length; j++ ){
-            if(children[i] <= cookies[j]){
-                i++;
-            }
-        }
-        return i;
 
-    }
 
 
 }

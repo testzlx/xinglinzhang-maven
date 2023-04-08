@@ -8,7 +8,7 @@ import java.util.List;
 public class LeetcodeZh_406 {
     public static void main(String[] args) {
         int[][] people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
-        reconstructQueue(people);
+        System.out.println(reconstructQueue(people));
     }
 
     public static int[][] reconstructQueue(int[][] people) {

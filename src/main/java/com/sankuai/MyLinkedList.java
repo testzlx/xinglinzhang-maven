@@ -101,6 +101,23 @@ public class MyLinkedList<T> {
 
     }
 
+    //找到链表的中间节点（快慢指针）
+    public Node findMid(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node pre = head;
+        Node p = head.next;
+        Node q = head.next.next;
+
+        while (q != null && q.next != null){
+            pre = pre.next;
+            p = pre.next;
+            q = q.next.next;
+        }
+        return p;
+    }
+
     private Node mergeLists(Node[] lists, int left, int right) {
         if (left == right){
             return lists[left];
@@ -157,5 +174,15 @@ public class MyLinkedList<T> {
         Node[] lists = {a1,b1,c2};
         Node head = myList.mergeKLists(lists);
         System.out.println(head.value);
+        System.out.println("------------------------------------------");
+        MyLinkedList<Integer> myList1 = new MyLinkedList<Integer>();
+        myList1.insert(6);
+        myList1.insert(5);
+        myList1.insert(4);
+        myList1.insert(3);
+        myList1.insert(2);
+        myList1.insert(1);
+        Node mid = myList1.findMid(myList1.head);
+        System.out.println(mid.value);
     }
 }
