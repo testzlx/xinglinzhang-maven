@@ -148,6 +148,57 @@ public class MyLinkedList<T> {
         return root.next;
     }
 
+
+
+    //链表的快速排序实现
+    public Node quickSort(Node head){
+         quickSort(head,null);
+         return head;
+    }
+
+    private void quickSort(Node head, Node tail) {
+        if(head != tail){
+            Node partition = getPartition(head,tail);
+            quickSort(head,partition);
+            quickSort(partition.next,tail);
+        }
+    }
+
+    private <T> void swap(Node<T> p,Node<T> q){
+        T tmp = p.value;
+        p.value = q.value;
+        q.value = tmp;
+
+    }
+
+    private Node getPartition(Node head, Node tail) {
+        if(head == null ||head.next == tail){
+            return head;
+        }
+        Node p = head,q = head.next;
+        while(q != tail){
+            if ((int)q.value < (int)head.value){
+                p = p.next;
+                swap(p,q);
+            }
+            q = q.next;
+        }
+        swap(head,p);
+        return p;
+    }
+
+    public void clear(Node node) {
+        while(node != null) {
+            Node next = node.next;
+            node.value = null;
+            node.next = null;
+            node = null;
+            node = next;
+        }
+        this.head = null;
+    }
+
+
     public static void main(String[] args) {
 
         MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
@@ -175,14 +226,72 @@ public class MyLinkedList<T> {
         Node head = myList.mergeKLists(lists);
         System.out.println(head.value);
         System.out.println("------------------------------------------");
-        MyLinkedList<Integer> myList1 = new MyLinkedList<Integer>();
-        myList1.insert(6);
-        myList1.insert(5);
-        myList1.insert(4);
-        myList1.insert(3);
-        myList1.insert(2);
-        myList1.insert(1);
-        Node mid = myList1.findMid(myList1.head);
+        myList.clear(myList.head);
+        myList.insert(6);
+        myList.insert(5);
+        myList.insert(4);
+        myList.insert(3);
+        myList.insert(2);
+        myList.insert(1);
+        Node mid = myList.findMid(myList.head);
         System.out.println(mid.value);
+        System.out.println("------------------快速排序------------------------");
+        myList.clear(myList.head);
+        myList.insert(3);
+        myList.insert(4);
+        myList.insert(9);
+        myList.insert(2);
+        myList.insert(1);
+        myList.insert(5);
+        myList.quickSort(myList.head);
+        System.out.println(myList.head.value);
+        System.out.println("-----------------归并排序------------------------");
+        myList.clear(myList.head);
+        myList.insert(3);
+        myList.insert(4);
+        myList.insert(9);
+        myList.insert(2);
+        myList.insert(1);
+        myList.insert(5);
+        Node mergeSortNode = myList.mergeSort(myList.head);
+        System.out.println(mergeSortNode.value);
+    }
+
+    public Node mergeSort(Node head) {
+        if (head == null || head.next == null){
+            return head;
+        }
+        Node pre =head,curNode = head.next,nextNode = head.next.next;
+        while(nextNode != null && nextNode.next != null){
+            pre = pre.next;
+            curNode = pre.next;
+            nextNode = nextNode.next.next;
+        }
+        pre.next = null;
+        Node node1 = mergeSort(head);
+        Node node2 = mergeSort(curNode);
+        return merge(node1,node2);
+    }
+
+    private Node merge(Node node1, Node node2) {
+        Node head = new Node(0,null);
+        Node tmp = head;
+        while(node1 != null && node2 !=null){
+            if((int)node1.value < (int)node2.value){
+                tmp.next = node1;
+                node1 = node1.next;
+            }else {
+                tmp.next = node2;
+                node2 = node2.next;
+            }
+            tmp = tmp.next;
+        }
+        if (node1 != null)  {
+            tmp.next = node1;
+        }
+        if (node2 != null) {
+            tmp.next = node2;
+        }
+        return head.next;
     }
 }
