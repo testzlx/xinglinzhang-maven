@@ -1,11 +1,8 @@
 package com.sankuai.tree;
 
-import com.sankuai.Tree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+
+import java.util.*;
 
 public class Leetcode_cn_95 {
 
@@ -15,6 +12,15 @@ public class Leetcode_cn_95 {
         TreeNode right;
         TreeNode(int val){
             this.val = val;
+        }
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int val,ListNode next) {
+            this.val = val;
+            this.next = next;
         }
     }
 
@@ -154,6 +160,37 @@ public class Leetcode_cn_95 {
             sum+=ele;
         }
         return sum == targetSum;
+    }
+
+
+    //树每一层次的节点组成链表  https://leetcode.cn/problems/list-of-depth-lcci/
+    public ListNode[] listOfDepth(TreeNode tree) {
+        List<ListNode> res = new ArrayList<>();
+        if (tree == null) {
+            return new ListNode[0];
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(tree);
+        while(!queue.isEmpty()){
+            Queue<TreeNode> tmpQueue = new LinkedList<>();
+            ListNode head = new ListNode(-1,null);
+            ListNode p = head;
+            while(!queue.isEmpty()){
+                TreeNode treeNode = queue.poll();
+                if (treeNode.left != null) {
+                    tmpQueue.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    tmpQueue.add(treeNode.right);
+                }
+                ListNode newNode  = new ListNode(treeNode.val,null);
+                p.next = newNode;
+                p = newNode;
+            }
+            res.add(head.next);
+            queue = tmpQueue;
+        }
+        return res.toArray(new ListNode[0]);
     }
 
 

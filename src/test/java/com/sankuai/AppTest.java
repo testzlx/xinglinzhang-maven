@@ -63,6 +63,21 @@ public class AppTest
     }
 
     @Test
+    public void byteTest(){
+        int value = 1000,off = 0;
+        byte[] bytes = new  byte[4];
+        bytes[off + 3] = (byte) value;
+        bytes[off + 2] = (byte) (value >>> 8);
+        bytes[off + 1] = (byte) (value >>> 16);
+        bytes[off] = (byte) (value >>> 24);
+        System.out.println(Arrays.toString(bytes));
+
+        //把以上byte数组还原
+        int tt = ((bytes[off + 3] & 0xFF)) + ((bytes[off + 2] & 0xFF) << 8) + ((bytes[off + 1] & 0xFF) << 16) + ((bytes[off]) << 24);
+        System.out.println("tt=" + tt);
+    }
+
+    @Test
     public void mapTest(){
         Map<Integer,Integer> map = new HashMap<>();
         map.put(1,2);

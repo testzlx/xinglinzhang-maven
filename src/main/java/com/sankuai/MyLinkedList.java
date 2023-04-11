@@ -294,4 +294,58 @@ public class MyLinkedList<T> {
         }
         return head.next;
     }
+
+    //  leetcode_cn_141,判断链表是否有环
+    public boolean hasCycle(Node head) {
+        Node p = head,q = head.next;
+        while(p != null && q != null && q.next != null){
+            if (p == q) {
+                return true;
+            }
+            p = p.next;
+            q = q.next.next;
+        }
+        return false;
+
+    }
+
+    //  判断两链表是否相交,leetcode_cn160
+    public Node getIntersectionNode(Node headA, Node headB) {
+        if (headA == null || headB == null){
+            return  null;
+        }
+        Node pA = headA,pB = headB;
+        while(pA != pB) {
+            pA = pA == null ? pB:pA.next;
+            pB = pB == null ? pA:pB.next;
+        }
+        return pA;
+
+    }
+
+
+    public Node removeNthFromEnd(Node head, int n) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node p = head,q = head,afterN = null;
+        while( n>0) {
+            p = p.next;
+            n--;
+        }
+        afterN = p;
+        if (afterN == null) {
+            return head.next;
+        }
+        while (afterN.next != null) {
+            afterN = afterN.next;
+            q= q.next;
+        }
+        Node tmp = q.next;
+        q.next = tmp.next;
+        tmp = null;
+
+        return head;
+
+    }
 }
