@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.dp;
 
 /**
  * 入室抢劫,每户人家组成一个环形，首尾相连
