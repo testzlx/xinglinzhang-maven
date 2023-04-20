@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.datastruct;
 
 import java.util.Random;
 

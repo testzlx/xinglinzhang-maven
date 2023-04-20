@@ -3,7 +3,7 @@ package com.sankuai.bit;
 
 /**
  * 树状数组 [Binary index Tree] ===>bit 和线段树类似
- *
+ *  https://www.cnblogs.com/xenny/p/9739600.html
  *
  */
 public class Main {

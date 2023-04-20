@@ -95,6 +95,43 @@ public class Main {
         return result;
     }
 
+    /* 求最长公共子串  二分查找+哈希 */
+    public static int lcsV2_v3(String str1, String str2) {
+        return 0;
+    }
+
+
+    /* 求最长公共子串  滑动窗口思想 */
+    public static int lcsV2_v2(String str1, String str2) {
+        int len1 = str1.length();
+        int len2 = str2.length();
+        int ret = 0;
+        for(int i=0;i<len1;i++){
+            int len = Math.min(len2,len1-i);
+            int commonLen = find_len(str1,str2,i,0,len);
+            ret = Math.max(ret,commonLen);
+        }
+
+        for(int i=0;i<len2;i++){
+            int len = Math.min(len1,len2-i);
+            int commonLen = find_len(str1,str2,0,i,len);
+            ret = Math.max(ret,commonLen);
+        }
+        return ret;
+    }
+
+    private static int find_len(String str1, String str2, int str1_start, int str2_start, int len) {
+        int tmp =0,ret = 0;
+        for(int i= 0;i<len;i++){
+            if(str1.charAt(str1_start+i) == str2.charAt(str2_start+i)){
+                tmp++;
+            }else{
+                tmp = 0;
+            }
+            ret = Math.max(ret,tmp);
+        }
+        return ret;
+    }
 
     //leetcode_cn 44 字符串通配符匹配
     public static boolean isMatch(String s, String p) {

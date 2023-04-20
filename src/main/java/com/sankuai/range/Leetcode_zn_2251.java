@@ -1,4 +1,4 @@
-package com.sankuai.midfind;
+package com.sankuai.range;
 
 import java.util.*;
 
@@ -63,6 +63,25 @@ public class Leetcode_zn_2251 {
         }
         return persons;
 
+    }
+
+
+
+    Map<Integer,Integer> map = new TreeMap<>();
+    //Leetcode_cn_731
+    public boolean book(int start, int end) {
+        map.put(start,map.getOrDefault(start,0)+1);
+        map.put(end,map.getOrDefault(end,0)-1);
+        int cnt = 0;
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            cnt +=entry.getValue();
+            if (cnt >2) {
+                map.put(start,map.getOrDefault(start,0)-1);
+                map.put(end,map.getOrDefault(end,0)+1);
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {

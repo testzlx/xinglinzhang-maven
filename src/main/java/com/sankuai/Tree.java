@@ -1,7 +1,7 @@
 package com.sankuai;
 
 
-import com.sankuai.Queue;
+import com.sankuai.datastruct.Queue;
 
 import java.util.*;
 

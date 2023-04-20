@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.datastruct;
 
 //线段树 https://blog.csdn.net/johnny901114/article/details/80643017
 public class SegmentTree<T> {

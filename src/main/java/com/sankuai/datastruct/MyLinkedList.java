@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.datastruct;
 
 public class MyLinkedList<T> {
 

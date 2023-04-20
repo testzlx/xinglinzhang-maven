@@ -35,4 +35,42 @@ public class Leetcode_zh_76 {
         }
         return res;
     }
+
+    public String minWindowV2 (String str, String target) {
+        // write code here
+        int start =0,end = 0, min = str.length();
+        String ret  = null;
+        //char[] arr= target.toCharArray();
+        for (int i= 0 ;i<str.length();i++) {
+            for (int j = i;j< str.length();j++) {
+                if (pending(str,i,j,target)) {
+                    if (j - i < min) {
+                        min = j - i;
+                        ret = str.substring(i,j+1);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    private boolean pending(String str, int i, int j, String target) {
+        if (target.indexOf(str.charAt(i)) == -1 || target.indexOf(str.charAt(j)) == -1  ) {
+            return false;
+        }
+        int[] index = new int[target.length()];
+        for (int k = i ;k <= j;k++) {
+            char ch = str.charAt(k);
+            int idx = target.indexOf(ch);
+            if (idx != -1) {
+                index[idx] = 1;
+            }
+        }
+        for (int ii = 0 ; ii<index.length;ii++) {
+            if (index[ii] == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

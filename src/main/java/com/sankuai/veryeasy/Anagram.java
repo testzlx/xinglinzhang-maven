@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.veryeasy;
 
 import java.util.HashMap;
 import java.util.Map;

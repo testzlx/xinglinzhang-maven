@@ -88,6 +88,14 @@ public class AppTest
     }
 
     @Test
+    public void randomTest(){
+        Random random = new Random();
+        for(int i=0;i<10;i++) {
+            System.out.println(random.nextInt(3));
+        }
+    }
+
+    @Test
     public void queueTest(){
         Deque<Integer> a = new ArrayDeque<Integer>();
         a.addFirst(1);
@@ -97,7 +105,13 @@ public class AppTest
         System.out.println(a.pollFirst());
         System.out.println(a.pollFirst());
 
+    }
 
+    @Test
+    public void collectionSortTest(){
+        List<Integer> list = Arrays.asList(1,3,2,4,5);
+        Collections.sort(list,(a,b)->{return b-a;});
+        System.out.println(Arrays.toString(list.toArray()));
     }
 
     @Test

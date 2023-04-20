@@ -1,16 +1,15 @@
-package com.sankuai;
+package com.sankuai.backtrace;
 
 
 /**
  * 回溯算法
  */
-public class BackTrace {
+public class Package01 {
     public static void main(String[] args) {
         Package01 package01 = new Package01();
         package01.package01Main();
     }
 
-    static class Package01 {
         final int totalWeight = 16;
         int[] weights = {10, 8, 5};
         int[] values = {5, 4, 1};
@@ -58,5 +57,5 @@ public class BackTrace {
                 }
             }
         }
-    }
 }
+

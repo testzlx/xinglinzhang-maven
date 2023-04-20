@@ -47,11 +47,38 @@ public class Offer {
         return  tmp;
     }
 
+    //  数组相对排序,https://leetcode.cn/problems/0H97ZC/
+    public static int[]  relativeSortArray(int[] arr1, int[] arr2) {
+        int[] newArray = new int[arr1.length];
+        int[] tmp = new int[1001];
+        int idx = 0;
+        for(int i:arr1){
+            ++tmp[i];
+        }
+        for(int i:arr2){
+            while(tmp[i]-- >0){
+                newArray[idx++] = i;
+            }
+        }
+        for(int i =0;i<=1000;i++){
+            while(tmp[i]-->0){
+                newArray[idx++] = i;
+            }
+        }
+        return newArray;
+
+    }
+
 
     public static void main(String[] args) {
         int[][] arr ={{1,3},{2,6},{8,10},{15,18}};
         int[][] results = merge(arr);
         System.out.println(123);
+
+        int[] arr1 = {2,3,1,3,2,4,6,7,9,2,19};
+        int[] arr2 = {2,1,4,3,9,6};
+        int[] ans = relativeSortArray(arr1,arr2);
+        System.out.println(Arrays.toString(ans));
 
     }
 }
