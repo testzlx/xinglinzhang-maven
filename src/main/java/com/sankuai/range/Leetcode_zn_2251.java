@@ -39,7 +39,7 @@ public class Leetcode_zn_2251 {
 
     //第二种解答， 差分思想
     public static int[] fullBloomFlowers_v2(int[][] flowers, int[] persons) {
-        Set<Integer> set = new TreeSet<>();
+        TreeSet<Integer> set = new TreeSet<>();
         for (int[] start_end : flowers) {
             set.add(start_end[0]);
             set.add(start_end[1]);
@@ -59,7 +59,7 @@ public class Leetcode_zn_2251 {
 
         }
         for(int i=0;i<persons.length;i++){
-            persons[i]=count[hmap.get(persons[i])];
+            persons[i]=count[hmap.get(set.floor(persons[i]))];
         }
         return persons;
 
@@ -68,7 +68,7 @@ public class Leetcode_zn_2251 {
 
 
     Map<Integer,Integer> map = new TreeMap<>();
-    //Leetcode_cn_731
+    //Leetcode_cn_731 会议室预定
     public boolean book(int start, int end) {
         map.put(start,map.getOrDefault(start,0)+1);
         map.put(end,map.getOrDefault(end,0)-1);
@@ -86,7 +86,7 @@ public class Leetcode_zn_2251 {
 
     public static void main(String[] args) {
         int[][] flowers = {{1, 7}, {2, 8}, {3, 9}, {4, 10}};
-        int[] persons = {5};
+        int[] persons = {5,8};
         int[] result = fullBloomFlowers_v2(flowers, persons);
         System.out.println(Arrays.toString(result));
 

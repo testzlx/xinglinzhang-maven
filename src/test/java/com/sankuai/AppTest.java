@@ -32,6 +32,14 @@ public class AppTest
     }
 
     @Test
+    public void binarySortTest(){
+        int[] arr = {1,3,5,7,9};
+        int ret = Arrays.binarySearch(arr,4);
+        System.out.println(ret);
+    }
+
+
+    @Test
     public void listTest(){
         Queue<List<Integer>> aa = new LinkedList<List<Integer>>();
         aa.add(Arrays.asList(1,2,3,4));
@@ -133,6 +141,26 @@ public class AppTest
     public void strTest(){
         String a = "abcd";
         System.out.println(a.substring(0,a.length()-1));
+        char[] reverse = new char[a.length()];
+        for(int i=0;i<reverse.length;i++){
+            reverse[i] = a.charAt(reverse.length -i-1);
+        }
+        System.out.println(new String(reverse));
+
+    }
+
+    @Test
+    public void operatorTest(){
+        int COUNT_BITS = Integer.SIZE - 3;
+        int CAPACITY   = (1 << COUNT_BITS) - 1;
+
+        // runState is stored in the high-order bits
+        int RUNNING    = -1 << COUNT_BITS;
+        int SHUTDOWN   =  0 << COUNT_BITS;
+        int STOP       =  1 << COUNT_BITS;
+        int TIDYING    =  2 << COUNT_BITS;
+        int TERMINATED =  3 << COUNT_BITS;
+        System.out.println(123);
     }
 
     @Test

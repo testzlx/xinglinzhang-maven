@@ -348,4 +348,21 @@ public class MyLinkedList<T> {
         return head;
 
     }
+
+    //leetcode_cn_147. 核心思想是新开一条链表，不在原有链表上操作
+    public Node<Integer> insertionSortList(Node<Integer> head) {
+        Node<Integer> dummy = new Node(-1,null);
+        while(head != null){
+            Node<Integer> next = head.next;
+            Node<Integer> p = dummy;
+            while (p.next != null && (Integer)p.next.value < head.value){
+                 p =p.next;
+            }
+            head.next = p.next;
+            p.next = head;
+            head = next;
+        }
+
+        return dummy.next;
+    }
 }

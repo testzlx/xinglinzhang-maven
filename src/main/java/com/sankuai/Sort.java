@@ -54,7 +54,7 @@ public class Sort {
 	 */
 	private void quickSortMain() {
 		System.out.println("快速排序");
-		int[] tests = { 3, 6, 4, 10, 8, 4, 9 };
+		int[] tests = {4,3,2,5,7};
 		int copy[] = Arrays.copyOf(tests, tests.length);
 		quickSort(copy, 0, copy.length - 1);
 		print(copy);
@@ -75,6 +75,7 @@ public class Sort {
 	private int findIndex(int[] arr, int low, int high) {
 		int tmp = arr[low];
 		while (low < high) {
+			//顺序不能变化，先从右边比较，再从左边对比，如此循环
 			while (arr[high] > tmp && high > low) {
 				high--;
 			}
@@ -444,7 +445,7 @@ public class Sort {
 		sort.heapSortMain();
 		*/
 		//sort.jishuSort();
-		sort.quickSortMain();
+		sort.heapSortMain();
 		//sort.middleFindMain(20);
 	}
 

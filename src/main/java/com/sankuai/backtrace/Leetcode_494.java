@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.backtrace;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author zhanglinxing
  * @date 2017年5月25日 下午4:36:49
  */
-public class Solution {
+public class Leetcode_494 {
 	int count = 0;
     public int findTargetSumWays(int[] nums, int S) {
         int[][] memo = new int[nums.length][2001];
@@ -44,9 +44,9 @@ public class Solution {
     }
     
     public static void main(String[] args) {
-		//int nums[] = {1,1,1,1,1},sum=3;
-		Solution solution = new Solution();
-		//System.out.println(solution.findTargetSumWays(nums, sum));
+		int nums[] = {1,1,1,1,1},sum=3;
+		Leetcode_494 solution = new Leetcode_494();
+		System.out.println(solution.findTargetSumWays(nums, sum));
 		int A[] ={2,4,7,6,5,10,12,8,9};
 		System.out.println(solution.findUnsortedSubarray(A));
 		

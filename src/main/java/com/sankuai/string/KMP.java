@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.string;
 
 /**
  *   https://www.cnblogs.com/zzuuoo666/p/9028287.html
