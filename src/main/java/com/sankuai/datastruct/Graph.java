@@ -298,6 +298,7 @@ public class Graph {
 				k++;
 				T[cur].sign = 1;
 				int tmp = ga[endIndex];
+				//连通思想，是不是参考并查集算法？
 				for(int t = 0 ;t< vexCount;t++){
 					if(ga[t] ==tmp){
 						ga[t] = ga[fromIndex];					

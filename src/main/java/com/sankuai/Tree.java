@@ -556,6 +556,31 @@ public class Tree {
         }
     }
 
+    //leetcode_cn_104  树最大深度
+    public  int  maxDepth(Node node) {
+        if (node != null) {
+            return 0;
+        }
+        return 1+Math.max(maxDepth(node.left),maxDepth(node.right));
+
+    }
+    //leetcode_cn_111 树最小深度
+    public  int  minDepth(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        // null节点不参与比较
+        if (node.left == null && node.right != null) {
+            return 1 + minDepth(node.right);
+        }
+        // null节点不参与比较
+        if (node.right == null && node.left != null) {
+            return 1 + minDepth(node.left);
+        }
+        return 1+Math.min(minDepth(node.left),minDepth(node.right));
+
+    }
+
     /**
      * 一般树的高度
      *

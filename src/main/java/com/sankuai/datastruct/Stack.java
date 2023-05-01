@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.datastruct;
 
 import java.lang.reflect.Array;
 import java.util.LinkedList;
