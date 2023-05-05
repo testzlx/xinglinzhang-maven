@@ -69,6 +69,46 @@ public class Offer {
 
     }
 
+    //二维数组顺时针打印
+    // https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/
+    public static int[] spiralOrder(int[][] matrix) {
+        if (matrix == null ||  matrix.length ==0) {
+            return new int[0];
+        }
+        int width = matrix.length;
+        int length = matrix[0].length;
+        int left =0,top = 0,right = length-1,bottom = width-1,index = 0;
+        int[] res = new int[width * length];
+        while(true){
+            for(int i= left;i<=right;i++){
+                res[index++] = matrix[top][i];
+            }
+            if(++top>bottom){
+                break;
+            }
+            for(int i=top;i<=bottom;i++){
+                res[index++] = matrix[i][right];
+            }
+            if(--right < left){
+                break;
+
+            }
+            for(int i=right;i>=left;i--){
+                res[index++] = matrix[bottom][i];
+            }
+            if(--bottom >top){
+                break;
+            }
+            for(int i=bottom;i>=top;i--){
+                res[index++] = matrix[i][left];
+            }
+            if(++left > right){
+                break;
+            }
+        }
+    return res;
+    }
+
 
     public static void main(String[] args) {
         int[][] arr ={{1,3},{2,6},{8,10},{15,18}};
@@ -79,6 +119,10 @@ public class Offer {
         int[] arr2 = {2,1,4,3,9,6};
         int[] ans = relativeSortArray(arr1,arr2);
         System.out.println(Arrays.toString(ans));
+
+
+        int[][] doubleArr = {{1,2,3,4},{4,5,6,7},{7,8,9,10}};
+        System.out.println(Arrays.toString(spiralOrder(doubleArr)));
 
     }
 }

@@ -1,4 +1,4 @@
-package com.sankuai;
+package com.sankuai.trietree;
 
 import java.util.HashMap;
 import java.util.HashSet;
