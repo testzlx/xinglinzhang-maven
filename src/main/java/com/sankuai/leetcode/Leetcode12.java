@@ -7,17 +7,6 @@ import java.util.TreeMap;
 
 public class Leetcode12 {
 
-    private static Map<Integer,Character> hMap = new LinkedHashMap<>();
-
-    static {
-        hMap.put(1000,'M');
-        hMap.put(500,'D');
-        hMap.put(100,'C');
-        hMap.put(50,'L');
-        hMap.put(10,'X');
-        hMap.put(5,'V');
-        hMap.put(1,'I');
-    }
     public static void main(String[] args) {
         System.out.println(intToRoman(49));
     }

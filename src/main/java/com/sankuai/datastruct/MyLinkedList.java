@@ -101,22 +101,6 @@ public class MyLinkedList<T> {
 
     }
 
-    //找到链表的中间节点（快慢指针）
-    public Node findMid(Node head){
-        if(head == null || head.next == null){
-            return head;
-        }
-        Node pre = head;
-        Node p = head.next;
-        Node q = head.next.next;
-
-        while (q != null && q.next != null){
-            pre = pre.next;
-            p = pre.next;
-            q = q.next.next;
-        }
-        return p;
-    }
 
     private Node mergeLists(Node[] lists, int left, int right) {
         if (left == right){
@@ -148,7 +132,22 @@ public class MyLinkedList<T> {
         return root.next;
     }
 
+    //找到链表的中间节点（快慢指针）
+    public Node findMid(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node pre = head;
+        Node p = head.next;
+        Node q = head.next.next;
 
+        while (q != null && q.next != null){
+            pre = pre.next;
+            p = pre.next;
+            q = q.next.next;
+        }
+        return p;
+    }
 
     //链表的快速排序实现
     public Node quickSort(Node head){

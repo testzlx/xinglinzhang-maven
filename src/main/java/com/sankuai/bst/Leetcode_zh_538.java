@@ -188,6 +188,7 @@ public class Leetcode_zh_538 {
         return true;
     }
 
+    //leetcode_cn_98
     private boolean isBSTV2(Node root, int min, int max) {
         if (root == null) {
             return true;

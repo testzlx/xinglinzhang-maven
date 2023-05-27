@@ -24,6 +24,27 @@ public class Leetcode_cn_95 {
         }
     }
 
+
+    //leetcode_cn_199
+    List<Integer> res_199 = new ArrayList<>();
+
+    public List<Integer> rightSideView(TreeNode root) {
+         dfs(root,0);
+         return res_199;
+
+    }
+
+    private void dfs(TreeNode root, int depth) {
+        if(root!=null){
+            if(res_199.size() == depth){
+                res_199.add(root.val);
+            }
+            depth++;
+            dfs(root.right,depth);
+            dfs(root.left,depth);
+        }
+    }
+
     public List<TreeNode> generateTrees(int n) {
         if(n ==0){
             return new ArrayList<>();

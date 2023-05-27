@@ -46,6 +46,34 @@ public class Leetcode15 {
         dfs(i+1,nums,list2,target);
     }
 
+    //
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        ans.clear();
+        path.clear();
+        dfs3(k,n,0,1);
+        return ans;
+    }
+
+    private void dfs3(int k,int n,int cur_sum,int index){
+        if(cur_sum > n){
+            return;
+        }
+        if(path.size() == k){
+            if(cur_sum == n){
+                ans.add(new ArrayList<>(path));
+                return;
+            }
+        }
+
+        for(int i = index;i<=9;i++){
+            path.addLast(i);
+            cur_sum += i;
+            dfs3(k,n,cur_sum,i+1);
+            cur_sum -=i;
+            path.pollLast();
+        }
+
+    }
 
 
     List<List<Integer>> ans=new ArrayList<>();//保存结果

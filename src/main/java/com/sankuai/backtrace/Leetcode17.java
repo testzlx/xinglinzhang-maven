@@ -1,10 +1,11 @@
-package com.sankuai.leetcode;
+package com.sankuai.backtrace;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//组合问题，回溯算法
 public class Leetcode17 {
     public static void main(String[] args) {
         Leetcode17 leetcode17 = new Leetcode17();

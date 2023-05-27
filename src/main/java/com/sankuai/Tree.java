@@ -919,6 +919,24 @@ public class Tree {
     }
 
 
+    //leetcode_cn_129
+    public int sumNumbers(Node root) {
+        return sumNumbers(root,0);
+
+    }
+
+    private int sumNumbers(Node root, int sum) {
+        if(root == null){
+            return 0;
+        }else  if(root.left == null && root.right == null){
+            return 10*sum + root.value;
+        }else{
+            return sumNumbers(root.left,10*sum+root.value) +
+                    sumNumbers(root.right,10*sum+root.value);
+        }
+    }
+
+
     /**
      * 二叉树逆向
      *

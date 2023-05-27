@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="info" monitorInterval="30">
+
+    <Properties>
+        <Property name="date_format" value="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Property name="log_path">logs</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="ConsoleAppend" target="SYSTEM_OUT">
+            <PatternLayout pattern="${date_format}"/>
+        </Console>
+
+        <File name="FileAppend" fileName="${log_path}/xml_config.log" bufferedIO="true" immediateFlush="true">
+            <PatternLayout>
+                <pattern>${date_format}</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ConsoleAppend"/>
+            <AppenderRef ref="FileAppend"/>
+        </Root>
+    </Loggers>
+</Configuration>
