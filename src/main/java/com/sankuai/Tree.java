@@ -2,7 +2,6 @@ package com.sankuai;
 
 
 import com.sankuai.datastruct.Queue;
-
 import java.util.*;
 
 
@@ -299,20 +298,21 @@ public class Tree {
      * 非递归创建二叉树
      */
     void createTree2() {
-        Queue<Node> queue = new Queue<Node>();
+        java.util.Queue<Node> queue = new LinkedList<>();
         for (int i = 0; i < chss.length; i++) {
             Node tmp = new Node(chss[i]);
-            queue.linkPush(tmp);
+            queue.offer(tmp);
             if (root == null) {
                 root = tmp;
             } else {
                 if (i % 2 == 1) {
-                    Node parent = queue.linkTop();
+                    Node parent = queue.peek();
                     parent.left = tmp;
                 } else {
-                    Node parent = queue.linkPull();
+                    Node parent = queue.poll();
                     parent.right = tmp;
                 }
+
             }
         }
     }
@@ -900,7 +900,7 @@ public class Tree {
     }
 
 
-    //leetcode_101
+    //leetcode_101 判断树是否镜像对称
     public boolean isSymmetric(Node root) {
         if (root == null){
             return true;
@@ -999,6 +999,17 @@ public class Tree {
             return root;
         }
         return left == null ? right:left;
+    }
+
+
+    public boolean containNode(Node root,char ch){
+        if(root != null){
+            if (root.value == ch){
+                return true;
+            }
+            return containNode(root.left,ch) || containNode(root.right,ch);
+        }
+        return false;
     }
 
     char[] longestPath;
@@ -1140,6 +1151,8 @@ public class Tree {
 
     public static void main(String[] args) throws Exception {
         Tree tree = new Tree();
+        tree.createTree2();
+        System.out.println(tree.root);
         /*
         //二叉平衡树相关操作
         tree.insert('3');
@@ -1163,7 +1176,7 @@ public class Tree {
         Node node = tree.constructMaximumBinaryTree(chars);
         System.out.println("node:" + node);
          */
-
+        /*
         tree.root = tree.createTree();
         List<List<Character>> ret = tree.levelPrint(tree.root);
         /*

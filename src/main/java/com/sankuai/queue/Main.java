@@ -47,28 +47,24 @@ public class Main {
      * @return
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums.length ==0) {
+        if(nums == null || nums.length == 0) {
             return new int[0];
         }
-        if (k ==1) {
-            return nums;
+        int[] res = new int[nums.length - k + 1];
+        Deque<Integer> queue = new ArrayDeque<>();
+        for(int i = 0, j = 0; i < nums.length; i++) {
+            if(!queue.isEmpty() && i - queue.peek() >= k) {
+                queue.poll();
+            }
+            while(!queue.isEmpty() && nums[i] > nums[queue.peekLast()]) {
+                queue.pollLast();
+            }
+            queue.offer(i);
+            if(i >= k - 1) {
+                res[j++] = nums[queue.peek()];
+            }
         }
-        int[] res = new int[nums.length+1 -k];
-        Deque<Integer> queue = new LinkedList<>();
-        for (int i =0;i<nums.length;i++) {
-            while(!queue.isEmpty() && nums[i]>=nums[queue.peekLast()]){
-                queue.removeLast();
-            }
-            queue.addLast(i);
-            int left = i + 1 - k;
-            if (queue.peekFirst() < left) {
-                queue.removeFirst();
-            }
-            if (i+1 >= k) {
-                res[i+1-k] = nums[queue.peekFirst()];
-            }
 
-        }
         return res;
     }
 

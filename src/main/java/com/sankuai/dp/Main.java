@@ -6,6 +6,7 @@ public class Main {
         System.out.println(longestPalindrome("babad"));
         int commonCount = lcs("cnblogs","belong");
         System.out.println("lcs commonCount:" + commonCount);
+        System.out.println("公共子串len:" + lcsV2("cnblogs","belong"));
         boolean isMatch = isMatch("abc","a*");
         System.out.println("isMatch:" +isMatch);
     }

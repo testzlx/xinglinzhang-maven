@@ -36,6 +36,7 @@ public class Leetcode_cn_46 {
         return ans;
     }
 
+    //这个思想难理解
     public long maxWater_v3 (int[] arr) {
         int left=0;
         int right=arr.length-1;

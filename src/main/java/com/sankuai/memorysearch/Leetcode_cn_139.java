@@ -18,8 +18,25 @@ public class Leetcode_cn_139 {
             }
         }
         return dp[len];
+    }
 
 
+    public boolean wordBreakV1(String s, List<String> wordDict) {
+        int len = s.length(),maxLen = 0;
+        boolean[] dp =new boolean[len+1];
+        dp[0] = true;
+        for(String tmp : wordDict){
+            maxLen = Math.max(maxLen,tmp.length());
+        }
+        for(int i=1;i<=len;i++){
+            for(int j=Math.max(0,i-maxLen);j<i;j++){
+                if(dp[j] && wordDict.contains(s.substring(j,i))){
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[len];
     }
 
     public static void main(String[] args) {

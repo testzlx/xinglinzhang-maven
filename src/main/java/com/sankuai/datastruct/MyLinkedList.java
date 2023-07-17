@@ -309,6 +309,7 @@ public class MyLinkedList<T> {
     }
 
     //  判断两链表是否相交,leetcode_cn160
+    //如果不想交，那么pA与pB都最终走完两条链表后都置为null，相等并退出
     public Node getIntersectionNode(Node headA, Node headB) {
         if (headA == null || headB == null){
             return  null;

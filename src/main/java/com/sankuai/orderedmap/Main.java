@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         int[] arr ={1,5,9,1,5,9};
-        System.out.println(containsNearbyAlmostDuplicate(arr,2,3));
+        System.out.println(containsNearbyAlmostDuplicateV2(arr,2,3));
         int[] arrivals = {6,8,10,11,12,15,18,19,20,23,24,25,27,28,30,31,32,34,36,38};
         int[] loads = {15,15,5,12,8,13,2,8,10,6,4,18,9,20,4,5,14,11,4,2};
         System.out.println(busiestServers(10, arrivals, loads));
@@ -14,25 +14,12 @@ public class Main {
     //
 
     /**
-     * 220. 存在重复元素 III  自己写的，timeout
+     * 220. 存在重复元素 III
      * @param nums
      * @param k
      * @param t
      * @return
      */
-    public static boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-        for(int i=0 ;i<nums.length;i++) {
-            long cur = nums[i];
-            for (int j =i-1; i-j<= k && j>=0;j--) {
-                long left = nums[j];
-                if (Math.abs(cur-left) <=t) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public static boolean containsNearbyAlmostDuplicateV2(int[] nums, int k, int t) {
         TreeSet<Long> treeSet = new TreeSet<>();
         for(int i=0 ;i<nums.length;i++) {

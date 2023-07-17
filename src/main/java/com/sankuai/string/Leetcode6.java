@@ -1,4 +1,4 @@
-package com.sankuai.leetcode;
+package com.sankuai.string;
 
 import java.util.ArrayList;
 import java.util.List;

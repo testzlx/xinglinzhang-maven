@@ -1,8 +1,14 @@
 package com.sankuai.interview;
 
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Kuaishou{
+
+    public static void main(String[] args) {
+        Kuaishou kuaishou = new Kuaishou();
+        kuaishou.printValV2();
+    }
         private AtomicInteger i = new AtomicInteger(1);
         private Object obj = new Object();
 
@@ -54,6 +60,35 @@ public class Kuaishou{
             aThread.start();
             bThread.start();
         }
+
+    volatile int flag=0;
+    public void printValV2(){
+
+        new Thread(()-> {
+            int i =1;
+                while(true) {
+                    if(flag == 0) {
+                        System.out.println(i);
+                        flag = 1;
+                        i += 2;
+                    }
+                }
+        }).start();
+
+        new Thread(()-> {
+                int i =2;
+                while(true) {
+                    if(flag == 1) {
+                        System.out.println(i);
+                        flag = 0;
+                        i += 2;
+                    }
+                }
+        }).start();
+
+
+    }
+
 
         public int answer(int[] arr){
             if (arr.length <2){

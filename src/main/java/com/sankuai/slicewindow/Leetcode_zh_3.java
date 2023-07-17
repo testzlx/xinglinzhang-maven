@@ -15,21 +15,17 @@ public class Leetcode_zh_3 {
     }
 
     public static int lengthOfLongestSubstring(String s) {
-        int ans= 0 ,end = 0;
+        int ans= 0 ,start=0 ,end = 0;
         Set<Character> set = new HashSet<>();
-        for (int i = 0;i < s.length();i++) {
-            if (i !=0) {
-                set.remove(s.charAt(i -1));
-            }
-
-            while(end < s.length() && !set.contains(s.charAt(end))) {
-                set.add(s.charAt(end));
+        while(end<s.length()){
+            char ch = s.charAt(end);
+            if(!set.contains(ch)){
+                set.add(ch);
                 end++;
+            }else{
+                set.remove(s.charAt(start++));
             }
-            if (end -i > ans ) {
-                System.out.println(s.substring(i,end));
-            }
-            ans = Math.max(ans,end -i );
+            ans = Math.max(ans,set.size() );
 
         }
         return ans;
